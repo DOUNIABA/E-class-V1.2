@@ -31,7 +31,7 @@
                       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password">
                     </div>
                    
-                    <a href="dashboard.html">  <button type="button" onclick=window.location.href='dashbord.html' class="btn btn-primary ">SIGN IN</button></a>
+                    <a href="dashboard.html">  <button type="submit" class="btn btn-primary ">SIGN IN</button></a>
 
                    <div class="contact ">Forgot your password?<a href="#">Resert Password</a>
 

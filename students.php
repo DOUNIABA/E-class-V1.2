@@ -12,105 +12,36 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand d-flex flex-column " id="sidebar" style="z-index:1;">
-        <a href="#" class="navbar-brand text-light mt-5">
-            <div class="text-left border-start border-3 border-md-4 border-primary ps-md-2 fw-bold fs-4 mb-3 mb-md-0 text-dark" pb-40px>E-class</div>
-        </a>
-
-        <img src="images/profile.jpg" alt="" width="100px" class="img-fluid rounded-circle my-4 p-1 d-none
-        d-md-block ">
-        <div class="admin" style="text-align: center;">
-            <h5>Admin name</h5>
-            <span class=" fs-6 text-info" >Admin</span>              
-        </div>
-        </div>
-        <ul class="navbar-nav d-flex flex-column mt-5 ">
-            <li class="nav item w-100">
-                <a href="#" class="nav-link text-light pl-4 text-dark">
-                 <img src="images/ic-house.svg" class="card-image">
-                    Home</a>
-            </li>
-
-            <li class="nav item w-100">
-                <a href="#" class="nav-link text-light pl-4 text-dark">
-                    <img src="images/ic-course.svg" alt="" class="card-image ">Course</a>
-            </li>
-
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4 text-dark">
-                    <img src="images/ic-big-students.svg" alt="" class="card-image" style="width: 20PX;">
-                     Students</a>
-            </li>
-
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4 text-dark">
-                    <img src="images/ic-big-payments.svg" alt="" class="card-image" style="width: 20PX;" >
-                    Payment</a>
-            </li>
-
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4 text-dark">
-
-                    <img src="images/ic-report.svg" class="card-image">
-                Report</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4 text-dark">
-                    <img src="images/ic-settings.svg" class="card-image">Settings</a>
-            </li>
-        </ul>
-        <div class="logout">
-            <a href="#" class="list-group-item bg-transparent  second-text mt-5 "> 
-                Logout  <img src="images/ic-log-out.svg"> </a>
-
-        </div>
-    
-        </nav>  
-     
-        
-        <!-- Page Content -->
-        <div class=" px-5 ">
-            <div class=" navbar-expand-md bg-white nav-dark text-light">
-                <div class="d-flex justify-content-between">
-                   
-                    <a href="#" class="navbar-brand mx-1"><i class="fas fa-chevron-circle-left   fs-4 me-3" id="menu-toggle"></i></a>
-                        <button
-                                class="navbar-toggler" 
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#main">
-                              <span class="navbar-toggler-icon"></span>  
-                        </button> 
-
-                        
-                        
-                            <form class="d-flex ">
-                                <input class="form-control me-2 " type="search" placeholder="Search..." aria-label="Search">
-                                <img src="images/ic-notif.svg" style="width: 20PX;">
-                              </form>        
-                
-                </div>
-            </div>
+  
+<?php
+    include('sidebar.php');
+   include ("header.php");
+   
+   ?>
 
             <div class="main-content row p-2 d-flex align-items-center">
                 <div class="col-12 main-content-toolbar d-flex pb-2 justify-content-between align-items-center border-bottom-light">
                     <h1 class="h5 fw-bold" style="margin-left: 14%;">Students List</h1>
                     <div class="toolbar-left-part">
-                        <button class="sort ic ic-sort btn btn-sort"></button>
+                        <img src="images/ic-sort.svg">
                         <button class="btn btn-primary btn-add-students">ADD NEW STUDENT</button>
+                        <span class="border-bottom-3"></span>
                     </div>
                  </div>
 
-                     <hr id="hr" style="height: 5px;width: 100%; color: red;">
-                    <table class="datatable table-striped" style="width: 70%;">
+                    <table class="datatable table-striped mt-5" style="width: 70%;">
                         <thead>
                             <tr>
+                               
                                 <th scope="row" ></th>
                                 <th class="th-sm">Name</th>
                                 <th class="th-sm">Email</th>
                                 <th class="th-sm">phone</th>
                                 <th class="th-sm">email number</th>
                                 <th class="th-sm">Date d'admission</th>
+                                <th class="th-sm"></th>
+
+                            </div>
     
                             </tr>
                         </thead>
@@ -121,6 +52,7 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr>
@@ -132,6 +64,7 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr> 
@@ -143,6 +76,7 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr> <tr>
@@ -153,6 +87,7 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr> <tr class="bg-color" style="background-color: aliceblue;"> 
@@ -163,6 +98,7 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr> <tr>
@@ -173,6 +109,7 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr> <tr class="bg-color" style="background-color: aliceblue;"> 
@@ -182,7 +119,8 @@
                             <td>user@gmail.com</td>
                             <td>09887654</td>
                             <td>23345709</td>
-                            <td>09-09-2021</td>
+                            <td>09-09-2021</td>*
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
                             
     
                         </tr> <tr>
@@ -193,21 +131,16 @@
                             <td>09887654</td>
                             <td>23345709</td>
                             <td>09-09-2021</td>
-                            
-    
+                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
+                             
                         </tr>
-    
-    
+       
                     </table>
                 </div>
 
                  </div>
              </div>
                
-
-
-
-
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
