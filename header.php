@@ -12,7 +12,7 @@
                         <div class="col-md d-flex justify-content-between" >
                             <label style="font-size: x-large;margin-left: 12%;" for="menu" class="label">
                             </label>
-                            <img src="images/ic-arrow.svg" style="margin-left-10px;">
+                            <img src="images/ic-arrow.svg" style="margin-right:70%;">
 
                             <form class="d-flex ">
                             <div class="input-group mb-3">                            

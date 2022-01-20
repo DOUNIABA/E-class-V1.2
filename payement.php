@@ -29,58 +29,101 @@
                                     
                 <thead>
                     <tr>
-                  
+                       
                         <th class="th-sm">Name</th>
                         <th class="th-sm">Payment Schedule</th>
                         <th class="th-sm">Bill Number</th>
                         <th class="th-sm">Amount paid</th>
                         <th class="th-sm">Balance amount</th>
                         <th class="th-sm">Date </th>
+                        <th class="th-sm"> </th>
+
 
                     </tr>
                 </thead>
 
-                <tr class="bg-color" style="background-color: aliceblue;"> 
-                    <td>karhi</td>
-                    <td>first</td>
-                    <td>09887654</td>
-                    <td> DHS 100.000</td>
-                    <td> DHS 500.000</td>
-                    <td>09-09-2021</td>
-                    
+<?php  
+    
+    $PAYEMENT=[
+       [   
+           
+           'Name'  =>'karthi',
+           'Payment schedule' =>'First',
+           'Bill Number' =>'001234',
+           'Amount paid' =>'Dhs 100.000',
+           'Balance amount' =>'Dhs 100.000',
+           'date' =>'05-JAN,2022	',
+           'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
+    
+         
+       
+       
 
-                </tr>
-                <tr>
+     ],
+     [   
+           
+       'Name'  =>'karthi',
+       'Payment schedule' =>'First',
+       'Bill Number' =>'001234',
+       'Amount paid' =>'Dhs 100.000',
+       'Balance amount' =>'Dhs 100.000',
+       'date' =>'05-JAN,2022	',
+       'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
+     
+   
+   
 
-                    <td>karhi</td>
-                    <td>first</td>
-                    <td>09887654</td>
-                    <td> DHS 100.000</td>
-                    <td> DHS 500.000</td>
-                    <td>09-09-2021</td>
-                    
+    ],
+    [   
+            
+    'Name'  =>'karthi',
+    'Payment schedule' =>'First',
+    'Bill Number' =>'001234',
+    'Amount paid' =>'Dhs 100.000',
+    'Balance amount' =>'Dhs 100.000',
+    'date' =>'05-JAN,2022	',
+    'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
 
-                </tr> 
-                <tr class="bg-color" style="background-color: aliceblue;"> 
+    
 
-                    <td>karhi</td>
-                    <td>first</td>
-                    <td>09887654</td>
-                    <td> DHS 100.000</td>
-                    <td> DHS 500.000</td>
-                    <td>09-09-2021</td>
 
-                </tr> 
-                <tr>
-                  
-                        <td>karhi</td>
-                        <td>first</td>
-                        <td>09887654</td>
-                        <td> DHS 100.000</td>
-                        <td> DHS 500.000</td>
-                        <td>09-09-2021</td>
-                    
 
+    ],
+    [   
+            
+    'Name'  =>'karthi',
+    'Payment schedule' =>'First',
+    'Bill Number' =>'001234',
+    'Amount paid' =>'Dhs 100.000',
+    'Balance amount' =>'Dhs 100.000',
+    'date' =>'05-JAN,2022	',
+    'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
+
+
+
+
+
+    ]
+    ];
+ 
+
+
+    
+      foreach($PAYEMENT as $key=>$PAYEMENT){
+       echo"<tr>   
+     
+       <td>".$PAYEMENT['Name'] ."</td>
+       <td>". $PAYEMENT['Payment schedule']."</td>
+       <td>".$PAYEMENT['Bill Number']."</td>
+       <td>".$PAYEMENT['Amount paid']."</td>
+       <td>". $PAYEMENT['Balance amount']."</td>
+       <td>".$PAYEMENT['date']."</td>
+       <td>". $PAYEMENT['icon1']."</td>
+    
+       </tr>";
+    }
+
+ ?>  
                 </tr>
 
 

@@ -23,7 +23,7 @@
 
                 <div class="row g-3 my-2">
                      <div class="col-md-3 ">
-                        <div class="col shadow-sm d-flex justify-content-around align-items-center card_student " style="height: 100%; width: 100%;">
+                        <div class="col shadow-sm d-flex justify-content-around align-items-center card_student " style="height: 100%;">
                             <div>
                                 <img src="images/ic-big-students.svg" alt="" class="card-image" style="width: 20PX;">
                                 <p class="fs-5 mb-5 Secondary-text">Students</p>

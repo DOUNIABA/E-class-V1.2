@@ -45,95 +45,40 @@
     
                             </tr>
                         </thead>
-                        <tr class="bg-color" style="background-color: aliceblue;"> 
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
+                        <?php  
     
-                        </tr>
-                        <tr>
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
+ 
+      for($i=0;$i<18;$i++){
+        $student []=[  
+          'img'=>'<img src="images/student-img.jfif" alt="p" style="WIDTH: 10vh;">',
+          'Name'  =>'Uername',
+          'Email' =>'user@gmail.com',
+          'Phone' =>'12333445'.$i++,
+          'Enroll Number' =>'123456789'.$i,
+          'Date of admission' =>'08-DEC,2021',
+          'icon1' =>'<i class="fas fa-pen  " style="font-size:28px;color:#00C1FE ;">',
+          'icon2' =>'<i class="fas fa-trash "  style="font-size:28px;color:#00C1FE ;">',
+   
+        ];
 
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
-    
-                        </tr> 
-                        <tr class="bg-color" style="background-color: aliceblue;"> 
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
+      }
 
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
-    
-                        </tr> <tr>
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
+     foreach($student as $key=>$student){
+         echo"<tr>   
+       
+         <td>".$student['img']."</td>
+         <td>".$student['Name'] ."</td>
+         <td>". $student['Email']."</td>
+         <td>".$student['Phone']."</td>
+         <td>".$student['Enroll Number']."</td>
+         <td>". $student['Date of admission']."</td>
+         <td>".$student['icon1']."</td>
+         <td>". $student['icon2']."</td>
+      
+         </tr>";
+      }
 
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
-    
-                        </tr> <tr class="bg-color" style="background-color: aliceblue;"> 
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
-
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
-    
-                        </tr> <tr>
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
-
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
-    
-                        </tr> <tr class="bg-color" style="background-color: aliceblue;"> 
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
-
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>*
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                            
-    
-                        </tr> <tr>
-                            <td><img src="images/student-img.jfif" style="width: 60px;"></td>
-
-                            <td>usename</td>
-                            <td>user@gmail.com</td>
-                            <td>09887654</td>
-                            <td>23345709</td>
-                            <td>09-09-2021</td>
-                            <td><img src="images/ic-edit.svg"><img src="images/ic-delete.svg"></td>
-                             
-                        </tr>
+   ?>  
        
                     </table>
                 </div>
