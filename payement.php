@@ -32,7 +32,7 @@
                  <div class="row g-4 my-0">
             <div class=" table-responsive-sm table-responsive-md justify-content-end" style="width:70%,margin-left:10px;">
        
-       <table class="table bg-white table-borderless table-hover ">
+       <table class="table bg-white table table-striped table-hover">
            <thead>
                <tr class="bg_table text-table">
                         <th class="th-sm">Name</th>

@@ -23,9 +23,9 @@
                 include ("header.php");
                 ?>
 
-<div class="col-12 main-content-toolbar d-flex pb-2 justify-content-between align-items-center border-bottom-light">
-                    <h1 class="h5 fw-bold" style="margin-right: 10% , margin-top: 30px;">Students List</h1>
-                    <div class="toolbar-left-part" style="margin-top: 30px;">
+<div class="col-12 main-content-toolbar d-flex pb-2 justify-content-between align-items-center border-bottom-light mt-5">
+                    <h1 class="h5 fw-bold" style="margin-right: 10% , margin-top: 43px;">Students List</h1>
+                    <div class="toolbar-left-part" style="margin-top: 15px;">
                        <img src="images/ic-sort.svg">
                         <button class="sort ic ic-sort btn btn-sort"></button>
                         <button class="btn btn-info btn-add-students">ADD NEW STUDENT</button>
@@ -35,7 +35,7 @@
             <div class="row g-4 my-0">
             <div class=" table-responsive-sm table-responsive-md justify-content-end" style="width:70%,margin-left:10px;">
        
-       <table class="table bg-white table-borderless table-hover ">
+       <table class="table bg-white table table-striped table-hover">
            <thead>
                <tr class="bg_table text-table">
                   
@@ -67,7 +67,6 @@ $student []=[
 
 foreach($student as $key=>$student){
 echo"<tr>   
-
 <td>".$student['img']."</td>
 <td>".$student['Name'] ."</td>
 <td>". $student['Email']."</td>
@@ -76,7 +75,6 @@ echo"<tr>
 <td>". $student['Date of admission']."</td>
 <td>".$student['icon1']."</td>
 <td>". $student['icon2']."</td>
-
 </tr>";
 }
 
@@ -98,4 +96,4 @@ echo"<tr>
     <script src="js/main.js"></script>
          
 </body>
-</html>
+</html><
