@@ -11,16 +11,17 @@
   <title>students</title>
 
 </head>
-<body>
+<body >
+    
   
 <?php
-    include('sidebar.php');
-   include ("header.php");
-   
-   ?>
+include("sidebar.php");
+    include ("header.php");
 
+   ?>
+           
             <div class="main-content row p-2 d-flex align-items-center">
-                <div class="col-12 main-content-toolbar d-flex pb-2 justify-content-between align-items-center border-bottom-light">
+                <div class="col-12 main-content-toolbar d-flex pb-2 justify-content-between align-items-center border-bottom">
                     <h1 class="h5 fw-bold" style="margin-left: 14%;">Students List</h1>
                     <div class="toolbar-left-part">
                         <img src="images/ic-sort.svg">
@@ -28,10 +29,11 @@
                         <span class="border-bottom-3"></span>
                     </div>
                  </div>
-
-                    <table class="datatable table-striped mt-5" style="width: 70%;">
+                 <div class=" table-responsive-sm table-responsive-md justify-content-end" style="width:70%,margin-left:10px;">
+       
+                    <table class="table bg-white table-bordered table-hover ">
                         <thead>
-                            <tr>
+                            <tr class="bg_table text-table">
                                
                                 <th scope="row" ></th>
                                 <th class="th-sm">Name</th>
@@ -42,12 +44,10 @@
                                 <th class="th-sm"></th>
 
                             </div>
-    
                             </tr>
                         </thead>
+
                         <?php  
-    
- 
       for($i=0;$i<18;$i++){
         $student []=[  
           'img'=>'<img src="images/student-img.jfif" alt="p" style="WIDTH: 10vh;">',
@@ -58,10 +58,9 @@
           'Date of admission' =>'08-DEC,2021',
           'icon1' =>'<i class="fas fa-pen  " style="font-size:28px;color:#00C1FE ;">',
           'icon2' =>'<i class="fas fa-trash "  style="font-size:28px;color:#00C1FE ;">',
-   
         ];
-
       }
+
 
      foreach($student as $key=>$student){
          echo"<tr>   
@@ -81,7 +80,10 @@
    ?>  
        
                     </table>
+                         
                 </div>
+    </div>
+    
 
                  </div>
              </div>

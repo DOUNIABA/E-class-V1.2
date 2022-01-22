@@ -31,13 +31,10 @@
                       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password">
                     </div>
                    
-                    <a href="dashboard.php"><button type="button" onclick=window.location.href='dashbord.php' class="btn btn-primary">SIGN IN</button></a>
+                    <a href="dashboard.php"><button type="button" onclick= window.location.href = "dashboard.php" class="btn btn-primary">SIGN IN</button></a>
                     <div class="contact ">Forgot your password?<a href="#">Resert Password</a>
-
                     </div>
                    
-
-                    
                   </form>
 
              </section>
