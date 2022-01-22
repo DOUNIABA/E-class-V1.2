@@ -11,64 +11,64 @@
   <title>dashboard</title>
 
 </head>
-<body>
+<body class="row">
+  <div  id="wrapper">
+      <div class="bg col-3" id="sidebar-wrapper">  
+             <?php        
+                include("sidebar.php");          
+            ?>
+      </div>
+       <div class="container-fluid px-1 col-9">
+           <?php
+                include ("header.php");
+                ?>
 
-    <?php
-    include("sidebar.php");
-    include ("header.php");
-   
-   ?>
-          
-    <div class="container-fluid px-4 py-5 col-10 Wwitdh-100%">
-
-        <div class="row g-3 my-2">
-                     <div class=" col-md-3 ">
-                        <div class="col shadow-sm d-flex justify-content-around align-items-center card_student " style="height: 100%;">
-                            <div>
-                                <img src="images/ic-big-students.svg" alt="" class="card-image" style="width: 20PX;">
-                                <p class="fs-5 mb-5 Secondary-text">Students</p>
-                            </div>
-                           <h3 class="fs-2 mt-5">243</h3>
+            <div class="row g-4 my-0">
+                <div class="col-md-6 col-sm-12 col-lg-3  ">
+                    <div class="col shadow-sm d-flex justify-content-around align-items-center card_student " style="height: 100%; width: 100%;">
+                        <div>
+                            <img src="images/ic-big-students.svg" alt="" class="card-image" style="width: 20PX;">
+                            <p class="fs-5 mb-5 Secondary-text">Students</p>
                         </div>
+                    <h3 class="fs-2 mt-5">243</h3>
                     </div>
+                </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3  shadow-sm d-flex justify-content-between  card_cours ">
-                            <div>
-                                <img src="images/ic-big-course.svg" alt="" class="card-image" style="width: 20PX;">
-                               
-                                <p class="fs-5 mb-5 Secondary-text">Course</p>
-                            </div>
-                            <h3 class="fs-2 mt-5">13</h3>
+                <div class="col-md-6 col-sm-12 col-lg-3 ">
+                    <div class="p-3  shadow-sm d-flex justify-content-around align-items-center card_cours ">
+                        <div>
+                            <img src="images/ic-big-course.svg" alt="" class="card-image" style="width: 20PX;">
+                        
+                            <p class="fs-5 mb-5 Secondary-text">Course</p>
                         </div>
+                        <h3 class="fs-2 mt-5">13</h3>
                     </div>
+                </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3  shadow-sm d-flex justify-content-around align-items-center card_payment ">
-                            <div>
-                                <img src="images/ic-big-payments.svg" alt="" class="card-image" style="width: 20PX;">                               
-                                <p class="fs-5 mb-5 Secondary-text">Payments</p>
-                            </div>
-                            <h3 class="fs-2 mt-5">DH556,000</h3>
+                <div class="col-md-6 col-sm-12 col-lg-3 ">
+                    <div class="p-3  shadow-sm d-flex justify-content-around align-items-center card_payment ">
+                        <div>
+                            <img src="images/ic-big-payments.svg" alt="" class="card-image" style="width: 20PX;">                               
+                            <p class="fs-5 mb-5 Secondary-text">Payments</p>
                         </div>
+                        <h3 class="fs-2 mt-5">DH556,000</h3>
                     </div>
-                    
-                    <div class="col-md-3">
-                        <div class="p-3  shadow-sm d-flex justify-content-around align-items-center card_user  " style="height: 100%;">
-                            <div>
-                                <img src="images/ic-big-users.svg" alt="" class="card-image" style="width: 20PX;">                              
-                                <p class="fs-5 mb-5 text-white">Users</p>
-                            </div>
-                             <h3 class="fs-2 mt-5">3</h3>
+                </div>
+                
+                <div class="col-md-6 col-sm-12 col-lg-3 ">
+                    <div class="p-3  shadow-sm d-flex justify-content-around align-items-center card_user  " style="height: 100%;">
+                        <div>
+                            <img src="images/ic-big-users.svg" alt="" class="card-image" style="width: 20PX;">                              
+                            <p class="fs-5 mb-5 text-white">Users</p>
                         </div>
+                        <h3 class="fs-2 mt-5">3</h3>
                     </div>
-              
-
-        </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-  
-        
+                </div>
+         </div>
+     </div>
+   </div>
+</div>
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"

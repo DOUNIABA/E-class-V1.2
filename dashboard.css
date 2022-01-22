@@ -1,23 +1,22 @@
 body{
-    margin: 5px;
-    min-height: 100vh;  
+    margin: 2px;
+    height: 100vh;  
+    background:#E5E5E5; 
 }
 
-.bg {
-  background:  #FAFFC1;
+.bg{
+  background: #FAFFC1;
 }
-
-.rounded-full {
-  border-radius: 100%;
-}
-
-  #wrapper {
+#wrapper {
   overflow-x: hidden;
-}
+  height: 100%;
+  width: 19%;
 
+}
+ 
 #sidebar-wrapper {
   min-height: 100%;
-  margin-left: -240px;
+  width: 350px;
 }
 
 .profile{
@@ -27,9 +26,10 @@ body{
 
 .list-group a:hover{
    background: #00C1FE !important;
-}  
+} 
+
 #sidebar-wrapper .list-group {
-  width: 240px;
+  width: 200px;
 }
 
 #page-content-wrapper {
