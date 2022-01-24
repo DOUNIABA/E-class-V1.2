@@ -1,0 +1,17 @@
+.sidebar-nav li{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+}
+.sidebar-nav{
+    gap: 1rem;
+}
+.sidebar-nav li  a{
+width: 100%;
+text-decoration: none;
+color: black !important;
+padding: 0.2rem;
+display: flex;
+
+}

@@ -6,22 +6,23 @@ body{
 
 .bg{
 background: #FAFFC1;
+height: 100VH;
 }
+
 #wrapper {
-overflow-x: hidden;
 height: 100%;
 width: 19%;
 
 }
 
 #sidebar-wrapper {
-min-height: 100%;
-width: 350px;
+  /* height: 100%; */
+  /* width: 90%; */
 }
 
 .profile{
-width: 120px;
-height: 120px;
+width:200px;
+height: 200px;
 }
 
 .list-group a:hover{
@@ -39,9 +40,7 @@ min-width: 50%;
 .input-group {
 width: 25% !important;
 }
-.nav-link:hover{
-background-color: #00C1FE;
-}
+
 
 .card_student{
   background: #F0F9FF ;
@@ -74,7 +73,35 @@ background-color: #00C1FE;
  .card_user i {
   color: white;
  }
- @media (min-width: 768px) {
-  #sidebar-dashboard {
-    margin-left: 0;
-  }}
+
+ .sidebar{
+   transition: 0.4s;
+ }
+
+ .active-sidebar{
+   margin-left: 0;
+ }
+
+ .active-cont{
+   margin-left: 250px;
+ }
+#menu-btn{
+  background-color: gray;
+  color: #00C1FE;
+}
+#menu-btn:focus{
+  box-shadow: #00C1FE;
+}
+
+@media screen and (max-width: 800px){
+ 
+  #sidebar{
+      margin-left: 0px;
+  }  
+  #menu:checked+#sidebar{
+    margin-left: -700px;
+    position: absolute;
+  }
+ 
+           
+}

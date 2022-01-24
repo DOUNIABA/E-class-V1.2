@@ -1,7 +1,9 @@
 body{
     background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%) !important;
-    padding-top: 10%;
- }
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
 
 form{
     background: white;
