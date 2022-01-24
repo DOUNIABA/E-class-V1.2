@@ -20,10 +20,6 @@ width: 19%;
   /* width: 90%; */
 }
 
-.profile{
-width:200px;
-height: 200px;
-}
 
 .list-group a:hover{
  background: #00C1FE !important;

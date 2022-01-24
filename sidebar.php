@@ -4,7 +4,7 @@
 </h1>
 <div class="list-group d-flex flex-column align-items-center w-100">                  
     <img src="images/profile.jpg" alt="profile picture"
-        class=" profile img-fluid rounded-circle mx-auto d-block my-2 p-1  ">
+        class=" profile w-75 rounded-circle mx-auto d-block my-2 p-1  ">
       <div class="user text-center ">
         <h6 > Admin name </h6>
         <span class=" fs-6 text-info fw-bold" >Admin</span>              

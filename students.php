@@ -20,7 +20,7 @@
                 <?php include("sidebar.php");  ?>
                </div>
             
-               <div class=" px-1 col">
+               <div class=" px-1 col-10">
                    <?php
                     include ("header.php");
                     ?>
