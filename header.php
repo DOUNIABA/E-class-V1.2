@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="d-flex align-items-center">
-           <button class="btn my-4"  id="menu-btn"> <img src="images/ic-arrow.svg" >
+           <button class="btn my-4"  id="menu-btn"> <img src="images/ic-arrow.svg" alt="a">
               </button>               
         </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"

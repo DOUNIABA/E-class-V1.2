@@ -3,44 +3,18 @@ body{
   height: 100vh;  
   background:#E5E5E5; 
 }
-
 .bg{
 background: #FAFFC1;
 height: 100VH;
 }
 
-#wrapper {
-height: 100%;
-width: 19%;
-
-}
-
-#sidebar-wrapper {
-  /* height: 100%; */
-  /* width: 90%; */
-}
-
-
 .list-group a:hover{
  background: #00C1FE !important;
 } 
 
-#sidebar-wrapper .list-group {
-width: 200px;
-}
-
-#page-content-wrapper {
-min-width: 50%;
-}
-
-.input-group {
-width: 25% !important;
-}
-
-
 .card_student{
   background: #F0F9FF ;
- }
+  border-radius: 5%; }
 
  .card_student i{
   color: #74C1ED ;
@@ -48,6 +22,7 @@ width: 25% !important;
 
 .card_cours{
  background: #FEF6FB;
+ border-radius: 5%;
 }
 
 .card_cours i{
@@ -56,48 +31,32 @@ width: 25% !important;
 
 .card_payment{
   background: #FEFBEC;
+  border-radius: 5%;
  }
 
  .card_payment i{
   color: #00C1FE;
  }
-
+ 
  .card_user{
   background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
+  border-radius: 5%;
  }
 
  .card_user i {
   color: white;
  }
 
- .sidebar{
-   transition: 0.4s;
- }
-
- .active-sidebar{
-   margin-left: 0;
- }
-
- .active-cont{
-   margin-left: 250px;
- }
 #menu-btn{
   background-color: gray;
   color: #00C1FE;
 }
-#menu-btn:focus{
-  box-shadow: #00C1FE;
-}
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 700px){
  
-  #sidebar{
-      margin-left: 0px;
-  }  
-  #menu:checked+#sidebar{
-    margin-left: -700px;
-    position: absolute;
+  .sorting{
+    position:absolute;
+      margin-right:70%;
+    }
+    
   }
- 
-           
-}

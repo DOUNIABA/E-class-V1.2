@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
@@ -14,24 +14,26 @@
   <body>
      <section class="container-fluid ">
          <section class="row justify-content-center">
-             <section class="col-12 col-sm-6 col-md-3">
-                <form class="form-container">
+             <section class="col-sm-12 col-lg-3 col-md-8">
+                <form class="form-container" action="dashboard.php">
                     <h1 class=" font-weight-bold">E-Classe</h1>
                     <div class="signin">
-                        <h4>SIGN IN</h4>
+                        <h2>SIGN IN</h2>
                         <p>Enter your credentials to access your account</p>
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter your email">
+                      <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="enter your email">
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <label for="exampleInputPassword1" class="form-label"> Password </label>
                       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password">
                     </div>
                    
-                    <a href="dashboard.php"><button type="button" onclick= window.location.href = "dashboard.php" class="btn btn-primary">SIGN IN</button></a>
-                    <div class="contact ">Forgot your password?<a href="#">Resert Password</a>
+                    <button type="submit" class="btn btn-primary">
+                    SIGN IN
+                  </button>
+                    <div class="contact ">Forgot your password?<a href="#"> Resert Password </a>
                     </div>
                    
                   </form>

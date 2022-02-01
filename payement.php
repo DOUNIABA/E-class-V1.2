@@ -1,3 +1,5 @@
+<?php include ('server.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +11,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="side.css">
-
   <title>payment</title>
 
 </head>
+<body>
+    <main>
 <div class="container-fluid">
          <div  class="row">
-              <div class="bg col-2 p-0" id="sidebar">  
+              <div class="bg col-2 p-0" id="sidebardash">  
                 <?php include("sidebar.php");  ?>
                </div>
             
@@ -27,15 +30,20 @@
             <div class="main-content row p-2 d-flex align-items-center">
                 <div class="col-12 main-content-toolbar d-flex pb-2 justify-content-between align-items-center ">
                     <h1 class="h5 fw-bold text-black" style="margin-right:16%;">Payment Details</h1>
-                    <div class="sorting" style=" margin-left: 68%;"><img src="images/ic-sort.svg"style="margin-left:10%;"></div>
+                    <div class="toolbar-left-part d-flex" style="margin-top: 15px;">
+                                       <img src="images/ic-sort.svg" alt="sort">
+                                         <button class="sort ic-sort btn btn-sort"></button>
+                                         <button class="btn btn-info btn-add-students"><a href="addpayment.php">ADD NEW PAYMENT</button></a>
+                                     </div>
+                       </div>
                     <span class="border-bottom-3"></span>
                  </div>
                  <div class="row g-4 my-0">
             <div class=" table-responsive-sm table-responsive-md justify-content-end" style="width:70%,margin-left:10px;">
        
-       <table class="table bg-white table table-striped table-hover">
-           <thead>
-               <tr class="bg_table text-table">
+            <table class="table bg-white table table-striped table-hover">
+               <thead>
+                    <tr class="bg_table text-table">
                         <th class="th-sm">Name</th>
                         <th class="th-sm">Payment Schedule</th>
                         <th class="th-sm">Bill Number</th>
@@ -45,75 +53,37 @@
                         <th class="th-sm"> </th>
 
 
-                    </tr>
+                </tr>
                 </thead>
 
-<?php  
-    
-    $PAYEMENT=[
-       [   
-           
-           'Name'  =>'karthi',
-           'Payment schedule' =>'First',
-           'Bill Number' =>'001234',
-           'Amount paid' =>'Dhs 100.000',
-           'Balance amount' =>'Dhs 100.000',
-           'date' =>'05-JAN,2022	',
-           'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
-     ],
-     [   
-           
-       'Name'  =>'karthi',
-       'Payment schedule' =>'First',
-       'Bill Number' =>'001234',
-       'Amount paid' =>'Dhs 100.000',
-       'Balance amount' =>'Dhs 100.000',
-       'date' =>'05-JAN,2022	',
-       'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
-     
-    ],
-    [   
-            
-    'Name'  =>'karthi',
-    'Payment schedule' =>'First',
-    'Bill Number' =>'001234',
-    'Amount paid' =>'Dhs 100.000',
-    'Balance amount' =>'Dhs 100.000',
-    'date' =>'05-JAN,2022	',
-    'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
+                <?php  
+                                         $sql="select * from payement";
+                                                $result=mysqli_query($conn,$sql);
+                                                if($result){
 
-    ],
-    [   
-            
-    'Name'  =>'karthi',
-    'Payment schedule' =>'First',
-    'Bill Number' =>'001234',
-    'Amount paid' =>'Dhs 100.000',
-    'Balance amount' =>'Dhs 100.000',
-    'date' =>'05-JAN,2022	',
-    'icon1' =>'<i class="far fa-eye" style="font-size:28px;color:#00C1FE"></i>',
-
-    ]
-    ];
- 
-      foreach($PAYEMENT as $key=>$PAYEMENT){
-       echo"<tr>   
-     
-       <td>".$PAYEMENT['Name'] ."</td>
-       <td>". $PAYEMENT['Payment schedule']."</td>
-       <td>".$PAYEMENT['Bill Number']."</td>
-       <td>".$PAYEMENT['Amount paid']."</td>
-       <td>". $PAYEMENT['Balance amount']."</td>
-       <td>".$PAYEMENT['date']."</td>
-       <td>". $PAYEMENT['icon1']."</td>
-    
-       </tr>";
-    }
-
- ?>  
-                </tr>
-
-
+                                                  while($row=mysqli_fetch_assoc($result)){
+                                                   $id=$row['id'];
+                                                   $matiere=$row['matiere'];
+                                                   $duree=$row['duree'];
+                                                   $prof=$row['prof'];
+                                                   $prix=$row['prix'];
+                                                                         
+                                                   echo '<tr>
+                                                  
+                                                    <td>'.$matiere.'</td>
+                                                    <td>'.$duree.'</td>                                          
+                                                    <td>'.$prof.'</td>                           
+                                                    <td>'.$prix.'</td>                                                  
+                                                    <td>
+                                                    <button class="btn btn-light"><a href="update.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
+                                                    <button class="btn btn-light"><a href="delete.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
+                                                    </td>
+                                                    </tr>';
+                                           
+                                                  }
+                                                }
+                  
+                                        ?>
             </table>
         </div>
 
@@ -123,5 +93,6 @@
                 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
                 crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
+</main>
 </body>
 </html>
