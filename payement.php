@@ -63,21 +63,23 @@
 
                                                   while($row=mysqli_fetch_assoc($result)){
                                                    $id=$row['id'];
-                                                   $matiere=$row['matiere'];
-                                                   $duree=$row['duree'];
-                                                   $prof=$row['prof'];
-                                                   $prix=$row['prix'];
+                                                    $name=$row['name'];
+                                                    $payment_schedule=$row['payment_schedule'];
+                                                    $bill_number=$row['bill_number'];
+                                                    $amount_paid=$row['amount_paid'];
+                                                    $balance_amount=$row['balance_amount'];
+                                                    $date=$row['date'];
+
                                                                          
                                                    echo '<tr>
                                                   
-                                                    <td>'.$matiere.'</td>
-                                                    <td>'.$duree.'</td>                                          
-                                                    <td>'.$prof.'</td>                           
-                                                    <td>'.$prix.'</td>                                                  
-                                                    <td>
-                                                    <button class="btn btn-light"><a href="update.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
-                                                    <button class="btn btn-light"><a href="delete.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
-                                                    </td>
+                                                    <td>'.$name.'</td>
+                                                    <td>'.$payment_schedule.'</td>                                          
+                                                    <td>'.$bill_number.'</td>                           
+                                                    <td>'.$amount_paid.'</td> 
+                                                    <td>'.$balance_amount.'</td> 
+                                                    <td>'.$date.'</td>                                                  
+                                                   
                                                     </tr>';
                                            
                                                   }

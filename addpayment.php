@@ -15,6 +15,7 @@ if (isset($_POST['submit'])){
     
     if($result){
         echo"data inserted successfully";
+        header('location:payement.php');
         }
     else{
         die(mysqli_error($conn));
@@ -48,17 +49,17 @@ $conn->close();
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Payment Schedule</label>
-            <input class="form-control" type="text" placeholder="enter your name" name="ordre">
+            <input class="form-control" type="text" placeholder="" name="ordre">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Bill Number</label>
-            <input class="form-control" type="text" placeholder="enter your email" name="num">
+            <input class="form-control" type="text" placeholder="" name="num">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Amount Number</label>
-            <input class="form-control" type="text" placeholder="enter your phone" name="amount">
+            <input class="form-control" type="text" placeholder="" name="amount">
         </div>
 
         
@@ -70,7 +71,7 @@ $conn->close();
         
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Date</label>
-            <input class="form-control" type="date" placeholder="enter your date" name="date">
+            <input class="form-control" type="date" placeholder="" name="date">
         </div>
 
         <input type="hidden" value='test' name='submit' >  

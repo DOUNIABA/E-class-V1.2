@@ -1,29 +1,33 @@
-
+<pre>
 <?php include 'server.php' ;
+
 $id=$_GET['updateid'];
 
-$sql="select * from courses where id =$id";
+$sql="select * from courses where id=$id";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
- $matiere=$row['matiere'];
- $duree=$row['duree'];
- $prof=$row['prof'];
- $prix=$row['prix'];
-                                      
+$iddata=$row['id'];
+$matiere=$row['matiere'];
+$duree=$row['duree'];
+$prof=$row['prof'];
+$prix=$row['prix'];
+
 
 if (isset($_POST['submit'])){
     $matiere=$_POST['mat'];
     $duree=$_POST['dur'];
     $prof=$_POST['profs'];
     $prix=$_POST['price'];
-   echo "fghj";
-    $sql = " UPDATE courses SET matiere='$matiere' ,duree='$duree', 
-    prof='$prof' ,prix='$prix' WHERE id=$id";
 
-    $result=mysqli_query($conn,$sql);
+    $sql1 = "   UPDATE `courses` SET 
+    `matiere`='$matiere',`duree`=' $duree',`prof`='$prof',
+    `prix`='$prix' WHERE id=$id";
+
+    $result=mysqli_query($conn,$sql1);
     
     if($result){
-        echo"data updated successfully";
+
+        header('location:courses.php');
     }
     else{
       die(mysqli_error($conn));
@@ -32,7 +36,7 @@ if (isset($_POST['submit'])){
 $conn->close();         
 
 ?>
-
+</pre>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,40 +49,39 @@ $conn->close();
     <title>add</title>
 </head>
 <body>
-<div class="container mt-5">
-    <form method="Post" action="">
+
+ <div class="container mt-5">
+    <form method="Post" action="updatecourse.php?updateid=<?php echo $id ?>">
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Matiére</label>
-            <input class="form-control" type="text" placeholder="enter your name" name="mat"
-            value=<?php
-            echo $matiere;?>>
+            <label for="formFile" class="form-label">Matiére</label>
+            <input class="form-control" type="text" placeholder="" name="mat" value=<?php echo $matiere;?>>
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">durée</label>
-            <input class="form-control" type="text" placeholder="enter your email" name="dur"
+            <label for="exampleInputPassword1" class="form-label">Durée</label>
+            <input class="form-control" type="text" placeholder="enter your name" name="dur"
             value=<?php
             echo $duree;?>>
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">prof</label>
-            <input class="form-control" type="text" placeholder="enter your phone" name="profs"
+            <label for="exampleInputEmail1" class="form-label">Prof</label>
+            <input class="form-control" type="text" placeholder="" name="prof"
             value=<?php
             echo $prof;?>>
         </div>
 
-        
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">prix</label>
+            <label for="exampleInputPassword1" class="form-label">Prix</label>
             <input class="form-control" type="text" placeholder="" name="price"
             value=<?php
             echo $prix;?>>
         </div>
 
-        <input type="hidden" value='test2' name='submit' >  
-        <button type="submit" class="btn btn-primary"><a href="courses.php"> update</button></a>
+
+        <input type="hidden" value='test' name='submit' >  
+        <button type="submit" class="btn btn-primary">update</a></button>
     </form>
 </div>
 

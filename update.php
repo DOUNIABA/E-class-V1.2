@@ -1,10 +1,12 @@
-
+<pre>
 <?php include 'server.php' ;
+
 $id=$_GET['updateid'];
 
-$sql="select * from students where id =$id";
+$sql="select * from students where id=$id";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
+$iddata=$row['id'];
 $img=$row['img'];
 $nom=$row['nom'];
 $email=$row['email'];
@@ -13,21 +15,22 @@ $email_number=$row['email_number'];
 $date_admission=$row['date_admission'];
 
 if (isset($_POST['submit'])){
-    $img=$_POST['image'];
-    $nom=$_POST['name'];
-    $email=$_POST['mail'];
-    $phone=$_POST['phone'];
-    $email_number=$_POST['email_number'];
-    $date_admission=$_POST['date_admission'];
+    $img1=$_POST['image'];
+    $nom1=$_POST['name'];
+    $email1=$_POST['mail'];
+    $phone1=$_POST['phone'];
+    $email1_number=$_POST['email_number'];
+    $date_admission1=$_POST['date_admission'];
 
-    $sql = " UPDATE students SET img='$img' ,nom='$nom', email='$email' ,phone='$phone' , 
-    email_number='$email_number',
-    date_admission='$date_admission' WHERE id=$id";
+    $sql1 = "   UPDATE `students` SET 
+    `img`='$img1',`nom`='$nom1',`email`='$email1',
+    `phone`='$phone1',`email_number`='$email1_number',`date_admission`='$date_admission1' WHERE id=$iddata";
 
-    $result=mysqli_query($conn,$sql);
+    $result=mysqli_query($conn,$sql1);
     
     if($result){
         echo"data updated successfully";
+        header('location:students.php');
     }
     else{
       die(mysqli_error($conn));
@@ -36,7 +39,7 @@ if (isset($_POST['submit'])){
 $conn->close();         
 
 ?>
-
+</pre>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,12 +54,11 @@ $conn->close();
 <body>
 
  <div class="container mt-5">
-    <form method="Post" action="students.php" >
+    <form method="Post" action="update.php?updateid=<?php echo $id ?>">
 
         <div class="mb-3">
             <label for="formFile" class="form-label">image</label>
-            <input class="form-control" type="file" placeholder="" name="image" value=<?php
-            echo $img;?>>
+            <input class="form-control" type="file" placeholder="" name="image" value=<?php echo $img;?>>
         </div>
 
         <div class="mb-3">

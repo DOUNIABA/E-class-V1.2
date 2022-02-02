@@ -1,5 +1,4 @@
 
-
 <?php include 'server.php' ;
 
 if (isset($_POST['submit'])){
@@ -12,7 +11,7 @@ if (isset($_POST['submit'])){
     ('$matiere' , '$duree', '$prof' , '$prix')";
     $result=mysqli_query($conn,$sql);  
 
-    if($result){
+if($result){
         header('location:courses.php');
         
     }
@@ -43,17 +42,17 @@ $conn->close();
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Matiére</label>
-            <input class="form-control" type="text" placeholder="enter your name" name="mat">
+            <input class="form-control" type="text" placeholder="" name="mat">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">durée</label>
-            <input class="form-control" type="text" placeholder="enter your email" name="dur">
+            <input class="form-control" type="text" placeholder="" name="dur">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">prof</label>
-            <input class="form-control" type="text" placeholder="enter your phone" name="profs">
+            <input class="form-control" type="text" placeholder="" name="profs">
         </div>
 
         
@@ -63,7 +62,7 @@ $conn->close();
         </div>
 
         <input type="hidden" value='test2' name='submit' >  
-        <button type="submit" class="btn btn-primary"><a href="courses.php"> Submit</button></a>
+        <button type="submit" class="btn btn-primary" text-light><a href="courses.php"> Submit</button></a>
     </form>
 </div>
 
