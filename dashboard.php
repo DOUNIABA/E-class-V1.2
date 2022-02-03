@@ -39,10 +39,20 @@
                             <div>
                                 <img src="images/ic-big-students.svg" alt="" class="card-image" style="width: 50PX;">
                                 <p class="fs-5 mb-5 Secondary-text">Students</p>
+
+                               
                             </div>
-                        <h3 class="fs-2 mt-5">243</h3>
+                        <h3 class="fs-2 mt-5"></h3>
+                        <?php  $sql =mysqli_query($conn," SELECT id FROM students order by id") ;
+                                 $row= mysqli_num_rows($sql);
+
+                                echo '<h3 class="fs-5 mt-5 ">'.$row.'</h3>'
+                            ?>
                         </div>
+
+                        
                     </div>
+
                     <div class="col-md-6 col-sm-12 col-lg-3 ">
                         <div class="p-3 shadow-sm d-flex justify-content-around align-items-center card_cours " style="height: 100%;">
                             <div>
@@ -50,7 +60,13 @@
                             
                                 <p class="fs-5 mb-5 Secondary-text">Course</p>
                             </div>
-                            <h3 class="fs-2 mt-5">13</h3>
+                            <h3 class="fs-2 mt-5"></h3>
+
+                            <?php  $sql =mysqli_query($conn," SELECT id FROM courses order by id") ;
+                                 $row= mysqli_num_rows($sql);
+
+                                echo '<h3 class="fs-5 mt-5 ">'.$row.'</h3>'
+                            ?>
                         </div>
                     </div>
 
@@ -60,7 +76,14 @@
                                 <img src="images/ic-big-payments.svg" alt="" class="card-image" style="width: 50PX;">                               
                                 <p class="fs-5 mb-5 Secondary-text">Payments</p>
                             </div>
-                            <h3 class="fs-5 mt-5fs-2 mt-5">DH556,000</h3>
+                            <h3 class="fs-5 mt-5fs-2 mt-5"></h3>
+                            <?php  $sql =mysqli_query($conn," SELECT SUM(balance_amount) as sum FROM payement ") ;
+                               while( $row= mysqli_fetch_assoc($sql)) {
+                                echo '<h3 class="fs-5 mt-5 ">'.$row['sum'].'dh </h3>';
+                               }
+
+
+                            ?>
                         </div>
                     </div>
                     

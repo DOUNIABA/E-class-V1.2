@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,7 @@
   <body>
      <section class="container-fluid ">
          <section class="row justify-content-center">
-             <section class="col-sm-12 col-lg-3 col-md-8">
+             <section class="col-sm-12 col-lg-4 col-md-6">
                 <form class="form-container" action="dashboard.php">
                     <h1 class=" font-weight-bold">E-Classe</h1>
                     <div class="signin">
@@ -23,11 +25,11 @@
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="enter your email">
+                      <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="enter your email" name="mail">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label"> Password </label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password" name="password">
                     </div>
                    
                     <button type="submit" class="btn btn-primary">

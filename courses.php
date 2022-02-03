@@ -39,7 +39,7 @@
                                      <div class="toolbar-left-part d-flex" style="margin-top: 15px;">
                                        <img src="images/ic-sort.svg" alt="sort">
                                          <button class="sort ic-sort btn btn-sort"></button>
-                                         <button class="btn btn-info btn-add-students"><a href="addcourse.php">ADD NEW COURSE</button></a>
+                                         <a class="btn btn-info" href="addcourse.php">ADD NEW COURSE</a>
                                      </div>
                        </div>
                        <div class="row my-0">

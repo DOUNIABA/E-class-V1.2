@@ -1,7 +1,6 @@
 
 <?php include 'server.php' ;
  
-
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="side.css">
 
-  <title>dashboard</title>
+  <title>student</title>
 </head>
 
 <body >   
@@ -28,7 +27,7 @@
                 <?php include("sidebar.php");  ?>
                </div>
             
-               <div class=" px-1 col-10">
+                 <div class=" px-1 col-10">
                    <?php
                     include ("header.php");
                     ?>
@@ -38,7 +37,7 @@
                                     <div class="toolbar-left-part d-flex" style="margin-top: 15px;">
                                       <img src="images/ic-sort.svg" alt="sort">
                                         <button class="sort ic-sort btn btn-sort"></button>
-                                        <button class="btn btn-info btn-add-students"><a href="add.php">ADD NEW STUDENT</button></a>
+                                       <a class="btn btn-info" href="add.php">ADD NEW STUDENT</a>
                                     </div>
                       </div>
                       <div class="row my-0">
@@ -84,7 +83,7 @@
                                                     <td>'.$date_admission.'</td>
                                                     <td>
                                                     <button class="btn btn-light"><a href="update.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
-                                                    <button class="btn btn-light"><a href="delete.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
+                                                    <button class="btn btn-light"><a href="deletestudent.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
                                                     </td>
                                                     </tr>';
                                            

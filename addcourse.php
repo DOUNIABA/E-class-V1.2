@@ -7,8 +7,9 @@ if (isset($_POST['submit'])){
     $prof=$_POST['profs'];
     $prix=$_POST['price'];
     
-    $sql=" insert into courses (matiere , duree , prof , prix ) VALUES 
-    ('$matiere' , '$duree', '$prof' , '$prix')";
+    $sql=" INSERT INTO courses( `matiere`, `duree`, `prof`, `prix`) 
+    VALUES ('$matiere','$duree','$prof','$prix')";
+    
     $result=mysqli_query($conn,$sql);  
 
 if($result){
@@ -33,11 +34,23 @@ $conn->close();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="side.css">
     <title>add</title>
 </head>
 <body>
 
- <div class="container mt-5">
+<div class="container-fluid">
+         <div  class="row" style="justify: content 30px;">
+              <div class="bg col-2 p-0" id="sidebardash">  
+                <?php include("sidebar.php");  ?>
+               </div>
+            
+                 <div class=" px-1 col-10">
+                   <?php
+                    include ("header.php");
+                   ?>
     <form method="Post" action="">
 
         <div class="mb-3">
@@ -62,8 +75,9 @@ $conn->close();
         </div>
 
         <input type="hidden" value='test2' name='submit' >  
-        <button type="submit" class="btn btn-primary" text-light><a href="courses.php"> Submit</button></a>
-    </form>
+        <button type="submit" class="btn btn-info">Submit</button>    </form>
+</div>
+</div>
 </div>
 
 </body>
