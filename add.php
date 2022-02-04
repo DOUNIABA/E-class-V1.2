@@ -1,5 +1,12 @@
 <?php include 'server.php' ;
 if (isset($_POST['submit'])){
+
+    if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
+    empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+	{
+		echo "ERREUR : tous les champs n'ont pas ete renseignés.";
+	}
+
     $img=$_POST['image'];
     $nom=$_POST['name'];
     $email=$_POST['mail'];
@@ -38,11 +45,12 @@ $conn->close();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="side.css">
+
     <title>add</title>
 </head>
 <body>
 
-<div class="container-fluid">
+    <div class="container-fluid">
          <div  class="row">
               <div class="bg col-2 p-0" id="sidebardash">  
                 <?php include("sidebar.php");  ?>

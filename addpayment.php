@@ -89,9 +89,10 @@ $conn->close();
             <input class="form-control" type="date" placeholder="" name="date">
         </div>
 
+        <div class="container mt-5 text-align-center">
         <input type="hidden" value='test' name='submit' >  
-        <button type="submit" class="btn btn-info">Submit</button>    </form>
-        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+         </div>-
         </div>
 
         </div>

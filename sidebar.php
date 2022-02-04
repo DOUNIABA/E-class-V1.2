@@ -1,12 +1,12 @@
-<h1 class="sidebar px-2 dark-text fs-5 border-start border-5 border-info sm-1" id="sidebar">   
+<h5 class="sidebar px-2 dark-text  border-start border-5 border-info" id="sidebar" style="font-size:90%;">   
               E-classe
-</h1>
+</h5>
 
 <div class="list-group d-flex flex-column align-items-center w-100">                  
     <img src="images/profile.jpg" alt="profile picture"
         class=" profile w-75 rounded-circle mx-auto d-block my-2 p-1  ">
       <div class="user text-center ">
-        <h2> Admin name </h2>
+        <h6> Admin name </h6>
         <span class=" fs-6 text-info fw-bold" > Admin </span>              
     </div>
      <ul class=" p-0 d-flex flex-column align-items-center mt-5 mb-5 mx-auto sidebar-nav w-30 fw-bold justify-content-center align-items-center">
@@ -63,9 +63,15 @@
             <span class="d-none d-md-inline">  <img src="images/ic-settings.svg" alt="z"class="card-image">Settings</span>
             </a>
         </li>
-        <a href="#" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none">
-                Logout  <i class="fas fa-sign-out-alt  "></i>  </a>
+        <a href="#" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none" style="font-size: 80%;">
+                Logout  <i class="fas fa-sign-out-alt "></i>  </a>
     
     </ul>
 </div>
            
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.miedidn.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>

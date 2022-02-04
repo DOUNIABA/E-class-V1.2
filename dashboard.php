@@ -74,13 +74,13 @@
                                 <img src="images/ic-big-payments.svg" alt="" class="card-image" style="width: 50PX;">                               
                                 <p class="fs-5 mb-5 Secondary-text">Payments</p>
                             </div>
+
                             <?php  $sql =mysqli_query($conn," SELECT SUM(balance_amount) as sum FROM payement ") ;
                                while( $row= mysqli_fetch_assoc($sql)) {
                                 echo '<h3 class="fs-5 mt-5 ">'.$row['sum'].'dh </h3>';
                                }
-
-
                             ?>
+                            
                         </div>
                     </div>
                     
