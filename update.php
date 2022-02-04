@@ -54,11 +54,11 @@ $conn->close();
 <body>
 
  <div class="container mt-5">
-    <form method="Post" action="update.php?updateid=<?php echo $id ?>">
-
+      <form method="Post" action="update.php?updateid=<?php echo $id ?>">
         <div class="mb-3">
             <label for="formFile" class="form-label">image</label>
-            <input class="form-control" type="file" placeholder="" name="image" value=<?php echo $img;?>>
+            <input class="form-control" type="file" placeholder="" name="image" value=<value=<?php
+            echo $nom;?>>
         </div>
 
         <div class="mb-3">

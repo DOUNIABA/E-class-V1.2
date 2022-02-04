@@ -16,7 +16,7 @@ $prix=$row['prix'];
 if (isset($_POST['submit'])){
     $matiere=$_POST['mat'];
     $duree=$_POST['dur'];
-    $prof=$_POST['profs'];
+    $prof=$_POST['prof'];
     $prix=$_POST['price'];
 
     $sql1 = "   UPDATE `courses` SET 
@@ -50,9 +50,9 @@ $conn->close();
 </head>
 <body>
 
- <div class="container mt-5">
-    <form method="Post" action="updatecourse.php?updateid=<?php echo $id ?>">
-
+ <div class="container mt-5 " >
+  <form method="Post" action="updatecourse.php?updateid=<?php echo $id ?>">
+ 
         <div class="mb-3">
             <label for="formFile" class="form-label">Matiére</label>
             <input class="form-control" type="text" placeholder="" name="mat" value=<?php echo $matiere;?>>

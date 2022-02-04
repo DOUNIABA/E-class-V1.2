@@ -26,6 +26,7 @@ $conn->close();
 
   ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,45 +53,49 @@ $conn->close();
                     include ("header.php");
                    ?>
       
-      <span class="border">
-    <form method="Post" action="add.php" >
+      <section class="col-sm-12 col-lg-8 col-md-6 rounded " style="margin-left:15%;" >
 
-        <div class="mb-3" justify-content-center>
+    
+    <form method="Post" action="add.php">
+
+        <div class="container" justify-content-center>
             <label for="formFile" class="form-label">image</label>
             <input class="form-control" type="file" placeholder="" name="image">
         </div>
 
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">name</label>
             <input class="form-control" type="text" placeholder="enter your name" name="name">
         </div>
 
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputEmail1" class="form-label">Email</label>
             <input class="form-control" type="email" placeholder="enter your email" name="mail">
         </div>
 
-        <div class="mb-3" >
+        <div class="container" >
             <label for="exampleInputPassword1" class="form-label">phone</label>
-            <input class="form-control" type="mmobile" placeholder="enter your phone" name="phone" style="witdh: 30px;">
+            <input class="form-control" type="tel" placeholder="enter your phone" name="phone" style="witdh: 30px;">
         </div>
 
         
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">email_number</label>
-            <input class="form-control" type="mobile" placeholder="" name="email_number">
+            <input class="form-control" type="tel" placeholder="" name="email_number">
         </div>
 
         
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">date_admission</label>
             <input class="form-control" type="date" placeholder="enter your date" name="date_admission">
         </div>
-
+        <div class="container mt-5 text-align-center">
         <input type="hidden" value='test' name='submit' >  
         <button type="submit" class="btn btn-info">Submit</button>
+         </div>
     </form>
-    </span>
+    </section>
+
               </div>
          </div>
   </div>

@@ -52,36 +52,39 @@ $conn->close();
                    <?php
                     include ("header.php");
                    ?>
+
+<section class="col-sm-12 col-lg-8 col-md-6  " style="margin-left:15%;" >
+
     <form method="Post" action="">
 
-        <div class="mb-3">
+        <div class="container">
             <label for="formFile" class="form-label">Name</label>
             <input class="form-control" type="texte" placeholder="" name="nom">
         </div>
 
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">Payment Schedule</label>
             <input class="form-control" type="text" placeholder="" name="ordre">
         </div>
 
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputEmail1" class="form-label">Bill Number</label>
             <input class="form-control" type="text" placeholder="" name="num">
         </div>
 
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">Amount Number</label>
             <input class="form-control" type="text" placeholder="" name="amount">
         </div>
 
         
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">Balance amount</label>
             <input class="form-control" type="text" placeholder="" name="b_amount">
         </div>
 
         
-        <div class="mb-3">
+        <div class="container">
             <label for="exampleInputPassword1" class="form-label">Date</label>
             <input class="form-control" type="date" placeholder="" name="date">
         </div>

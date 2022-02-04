@@ -37,9 +37,10 @@
                                     <div class="toolbar-left-part d-flex" style="margin-top: 15px;">
                                       <img src="images/ic-sort.svg" alt="sort">
                                         <button class="sort ic-sort btn btn-sort"></button>
-                                       <a class="btn btn-info" href="add.php">ADD NEW STUDENT</a>
+                                         <a class="btn btn-info" href="add.php">ADD NEW STUDENT</a>
                                     </div>
                       </div>
+
                       <div class="row my-0">
                           <div class=" table-responsive-sm table-responsive-md justify-content-end" style="margin-left:10px;">
                   
@@ -54,43 +55,40 @@
                                                 <th class="th-sm">phone</th>
                                                 <th class="th-sm">email number</th>
                                                 <th class="th-sm">Date d'admission</th>
-                                                
-
+                                               
                                             </tr>
                                         </thead>
-
-                                        <?php  
-                                        $sql="select * from students";
-                                                $result=mysqli_query($conn,$sql);
-                                                if($result){
+                                            <?php  
+                                                $sql="select * from students";
+                                                    $result=mysqli_query($conn,$sql);
+                                                    if($result){
 
                                                   while($row=mysqli_fetch_assoc($result)){
-                                                   $id=$row['id'];
-                                                    $img=$row['img'];
-                                                    $nom=$row['nom'];
-                                                    $email=$row['email'];
-                                                    $phone=$row['phone'];
-                                                    $email_number=$row['email_number'];
-                                                    $date_admission=$row['date_admission'];
+                                                      $id=$row['id'];
+                                                      $img=$row['img'];
+                                                      $nom=$row['nom'];
+                                                      $email=$row['email'];
+                                                      $phone=$row['phone'];
+                                                      $email_number=$row['email_number'];
+                                                      $date_admission=$row['date_admission'];
 
-                                                   echo '<tr>
-                                                  
-                                                    <td>'.$img.'</td>
-                                                    <td>'.$nom.'</td>
-                                                    <td>'.$email.'</td>
-                                                    <td>'.$phone.'</td>                           
-                                                    <td>'.$email_number.'</td>
-                                                    <td>'.$date_admission.'</td>
-                                                    <td>
-                                                    <button class="btn btn-light"><a href="update.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
-                                                    <button class="btn btn-light"><a href="deletestudent.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
-                                                    </td>
-                                                    </tr>';
+                                                   echo '<tr>                                                 
+                                                      <td><img src= "images/'.$img.'" style="width: 10vh;"></td>
+                                                      <td>'.$nom.'</td>
+                                                      <td>'.$email.'</td>
+                                                      <td>'.$phone.'</td>                           
+                                                      <td>'.$email_number.'</td>
+                                                      <td>'.$date_admission.'</td>
+                                                      <td>
+                                                      <button class="btn btn-light"><a href="update.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
+                                                      <button class="btn btn-light"><a href="deletestudent.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
+                                                      </td>
+                                                      </tr>';
                                            
                                                   }
                                                 }
                   
-                                        ?>
+                                          ?>
 
                                     </table>
                         

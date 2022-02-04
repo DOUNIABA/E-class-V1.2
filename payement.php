@@ -78,7 +78,8 @@
                                                     <td>'.$bill_number.'</td>                           
                                                     <td>'.$amount_paid.'</td> 
                                                     <td>'.$balance_amount.'</td> 
-                                                    <td>'.$date.'</td>                                                  
+                                                    <td>'.$date.'</td>   
+                                                    <td><img src="images/ic-eye.svg"></td>                                              
                                                    
                                                     </tr>';
                                            

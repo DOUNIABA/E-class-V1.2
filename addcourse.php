@@ -13,9 +13,10 @@ if (isset($_POST['submit'])){
     $result=mysqli_query($conn,$sql);  
 
 if($result){
+
         header('location:courses.php');
         
-    }
+            }
     else{
         die(mysqli_error($conn));
     }
@@ -51,31 +52,41 @@ $conn->close();
                    <?php
                     include ("header.php");
                    ?>
-    <form method="Post" action="">
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Matiére</label>
+<section class="col-sm-12 col-lg-8 col-md-6  " style="margin-left:15%;" >
+    <form method="Post" action="" >
+
+        <div class="container" >
+            <label for="exampleInputPassword1" class="form-label" >Matiére</label>
             <input class="form-control" type="text" placeholder="" name="mat">
         </div>
 
-        <div class="mb-3">
+        
+        <div class="container" >
             <label for="exampleInputEmail1" class="form-label">durée</label>
-            <input class="form-control" type="text" placeholder="" name="dur">
-        </div>
-
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">prof</label>
-            <input class="form-control" type="text" placeholder="" name="profs">
+            <input class="form-control" type="text" placeholder="" name="dur" >
         </div>
 
         
-        <div class="mb-3">
+        <div class="container" >
+            <label for="exampleInputPassword1" class="form-label">prof</label>
+            <input class="form-control" type="text" placeholder="" name="profs" style="margin-gauche:20%;">
+        </div>
+
+        
+        
+        <div class="container" >
             <label for="exampleInputPassword1" class="form-label">prix</label>
             <input class="form-control" type="text" placeholder="" name="price">
         </div>
 
-        <input type="hidden" value='test2' name='submit' >  
-        <button type="submit" class="btn btn-info">Submit</button>    </form>
+        <div class="container mt-5 text-align-center">
+        <input type="hidden" value='test' name='submit' >  
+        <button type="submit" class="btn btn-info">Submit</button>
+         </div>
+        
+     </form>
+</section>
 </div>
 </div>
 </div>

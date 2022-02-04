@@ -63,11 +63,9 @@
             <span class="d-none d-md-inline">  <img src="images/ic-settings.svg" alt="z"class="card-image">Settings</span>
             </a>
         </li>
-    
-    </ul>
-
-    <a href="#" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none">
+        <a href="#" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none">
                 Logout  <i class="fas fa-sign-out-alt  "></i>  </a>
     
+    </ul>
 </div>
            

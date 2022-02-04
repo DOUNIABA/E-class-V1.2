@@ -54,6 +54,8 @@
                                                  <th class="th-sm">durée</th>
                                                  <th class="th-sm">prof</th>
                                                  <th class="th-sm">prix</th>
+                                                 <th class="th-sm"></th>
+
                                              </tr>
                                          </thead>
  
