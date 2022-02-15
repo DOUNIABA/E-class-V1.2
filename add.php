@@ -12,17 +12,16 @@ if (isset($_POST['submit'])){
     $email=$_POST['mail'];
     $phone=$_POST['phone'];
     $email_number=$_POST['email_number'];
-    $date_admission=$_POST['date_admission'];
+    $date_admisssion=$_POST['date_admission'];
     
-    $sql=" INSERT INTO students (img , nom , email , phone , email_number , date_admission) VALUES
+    $sql=" INSERT INTO student (img , nom , email , phone , email_number , date_admission) VALUES
     ('$img' , '$nom', '$email' , '$phone' , '$email_number' , '$date_admission')";
     $result=mysqli_query($conn,$sql);
 
     echo($sql);
     
     if($result){
-        echo"data inserted successfully";
-        header('location:students.php');
+       
     }
     else{
         die(mysqli_error($conn));
@@ -61,10 +60,10 @@ $conn->close();
                     include ("header.php");
                    ?>
       
-      <section class="col-sm-12 col-lg-8 col-md-6 rounded " style="margin-left:15%;" >
+      <section class="col-sm-3 col-lg-6 col-md-4 rounded " style="margin-left:15%;" >
 
     
-    <form method="Post" action="add.php">
+    <form method="Post" action="">
 
         <div class="container" justify-content-center>
             <label for="formFile" class="form-label">image</label>

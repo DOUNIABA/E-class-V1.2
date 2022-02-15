@@ -1,7 +1,7 @@
-
 <?php include 'server.php' ;
- 
 
+include 'session.php';
+ 
  ?>
  
  <!DOCTYPE html>
@@ -60,7 +60,7 @@
                                          </thead>
  
                                          <?php  
-                                         $sql="select * from courses";
+                                         $sql="select * from course";
                                                  $result=mysqli_query($conn,$sql);
                                                  if($result){
                                                    while($row=mysqli_fetch_assoc($result)){
@@ -114,4 +114,4 @@
    </main>
    
  </body>
- </html><
+ </html>

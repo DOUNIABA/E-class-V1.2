@@ -3,7 +3,7 @@
 
     $id=$_GET['updateid'];
 
-    $sql="select * from courses where id=$id";
+    $sql="select * from course where id=$id";
     $result=mysqli_query($conn,$sql);
     $row=mysqli_fetch_assoc($result);
     $iddata=$row['id'];

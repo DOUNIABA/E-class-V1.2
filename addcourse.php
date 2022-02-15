@@ -7,7 +7,7 @@ if (isset($_POST['submit'])){
     $prof=$_POST['profs'];
     $prix=$_POST['price'];
     
-    $sql=" INSERT INTO courses( `matiere`, `duree`, `prof`, `prix`) 
+    $sql=" INSERT INTO course( `matiere`, `duree`, `prof`, `prix`) 
     VALUES ('$matiere','$duree','$prof','$prix')";
     
     $result=mysqli_query($conn,$sql);  

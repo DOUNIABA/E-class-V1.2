@@ -9,12 +9,11 @@ if (isset($_POST['submit'])){
     $balance_amount=$_POST['b_amount'];
     $date=$_POST['date'];
 
-    $sql=" insert into payement (name , payment_schedule , bill_number , amount_paid , balance_amount , date) VALUES
+    $sql=" insert into payements (name , payment_schedule , bill_number , amount_paid , balance_amount , date) VALUES
     ('$name' , '$payment_schedule', '$bill_number' , '$amount_paid' , '$balance_amount' , '$date')";
     $result=mysqli_query($conn,$sql);
     
     if($result){
-        echo"data inserted successfully";
         header('location:payement.php');
         }
     else{

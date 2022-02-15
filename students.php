@@ -1,7 +1,9 @@
 
 <?php include 'server.php' ;
+ include 'session.php'; ?>
  
-?>
+ 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +28,7 @@
               <div class="bg col-2 p-0" id="sidebardash">  
                 <?php include("sidebar.php");  ?>
                </div>
-            
+              
                  <div class=" px-1 col-10">
                    <?php
                     include ("header.php");
@@ -59,7 +61,7 @@
                                             </tr>
                                         </thead>
                                             <?php  
-                                                $sql="select * from students";
+                                                $sql="select * from student";
                                                     $result=mysqli_query($conn,$sql);
                                                     if($result){
 

@@ -1,4 +1,8 @@
-<?php include ('server.php') ?>
+<?php include ('server.php') ;
+
+include 'session.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +61,7 @@
                 </thead>
 
                 <?php  
-                                         $sql="select * from payement";
+                                         $sql="select * from payements";
                                                 $result=mysqli_query($conn,$sql);
                                                 if($result){
 

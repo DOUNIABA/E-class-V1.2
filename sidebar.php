@@ -6,7 +6,14 @@
     <img src="images/profile.jpg" alt="profile picture"
         class=" profile w-75 rounded-circle mx-auto d-block my-2 p-1  ">
       <div class="user text-center ">
-        <h6> Admin name </h6>
+        <h6> 
+
+        <?php  
+       
+                                    echo $_SESSION["name"];
+                            ?>  </h6>
+
+       
         <span class=" fs-6 text-info fw-bold" > Admin </span>              
     </div>
      <ul class=" p-0 d-flex flex-column align-items-center mt-5 mb-5 mx-auto sidebar-nav w-30 fw-bold justify-content-center align-items-center">
@@ -63,7 +70,7 @@
             <span class="d-none d-md-inline">  <img src="images/ic-settings.svg" alt="z"class="card-image">Settings</span>
             </a>
         </li>
-        <a href="#" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none" style="font-size: 80%;">
+        <a href="deconn.php" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none" style="font-size: 80%;">
                 Logout  <i class="fas fa-sign-out-alt "></i>  </a>
     
     </ul>

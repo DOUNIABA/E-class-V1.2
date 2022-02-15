@@ -2,8 +2,10 @@
 
     $id=$_GET['updateid'];
 
-    $sql="select * from students where id=$id";
+    $sql="select * from student where id=$id";
+
     $result= mysqli_query($conn,$sql);
+    
     $row=mysqli_fetch_assoc($result);
     $iddata=$row['id'];
     $img=$row['img'];
