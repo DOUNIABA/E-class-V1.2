@@ -19,6 +19,68 @@ include 'session.php';
 
 </head>
 <body>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <h2>ADD PAYMENT</h2>
+       <form method="Post" action="">
+
+<div class="container">
+    <label for="formFile" class="form-label">Name</label>
+    <input class="form-control" type="texte" placeholder="" name="nom">
+</div>
+
+<div class="container">
+    <label for="exampleInputPassword1" class="form-label">Payment Schedule</label>
+    <input class="form-control" type="text" placeholder="" name="ordre">
+</div>
+
+<div class="container">
+    <label for="exampleInputEmail1" class="form-label">Bill Number</label>
+    <input class="form-control" type="text" placeholder="" name="num">
+</div>
+
+<div class="container">
+    <label for="exampleInputPassword1" class="form-label">Amount Number</label>
+    <input class="form-control" type="text" placeholder="" name="amount">
+</div>
+
+
+<div class="container">
+    <label for="exampleInputPassword1" class="form-label">Balance amount</label>
+    <input class="form-control" type="text" placeholder="" name="b_amount">
+</div>
+
+
+<div class="container">
+    <label for="exampleInputPassword1" class="form-label">Date</label>
+    <input class="form-control" type="date" placeholder="" name="date">
+</div>
+
+<div class="container mt-5 text-align-center">
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+<input type="hidden" value='test' name='submit' >  
+<button type="submit" class="btn btn-info">ADD</button>
+ </div>
+</div>
+
+</div>
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
     <main>
 <div class="container-fluid">
          <div  class="row">
@@ -37,9 +99,11 @@ include 'session.php';
                     <div class="toolbar-left-part d-flex" style="margin-top: 15px;">
                                        <img src="images/ic-sort.svg" alt="sort">
                                          <button class="sort ic-sort btn btn-sort"></button>
-                                         <a class="btn btn-info" href="addpayment.php">ADD NEW PAYMENT</a>
-                                     </div>
+                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        ADD NEW PAYMENT</button>                                          </div>
                        </div>
+
+                       
                     <span class="border-bottom-3"></span>
                  </div>
                  <div class="row g-4 my-0">
@@ -60,37 +124,34 @@ include 'session.php';
                 </tr>
                 </thead>
 
-                <?php  
-                                         $sql="select * from payements";
-                                                $result=mysqli_query($conn,$sql);
-                                                if($result){
-
-                                                  while($row=mysqli_fetch_assoc($result)){
-                                                   $id=$row['id'];
-                                                    $name=$row['name'];
-                                                    $payment_schedule=$row['payment_schedule'];
-                                                    $bill_number=$row['bill_number'];
-                                                    $amount_paid=$row['amount_paid'];
-                                                    $balance_amount=$row['balance_amount'];
-                                                    $date=$row['date'];
-
-                                                                         
-                                                   echo '<tr>
+                      <?php  
+                            $sql="select * from payement";
+                            $result=mysqli_query($conn,$sql);
+                                               
+                           if($result){
+                           while($row=mysqli_fetch_assoc($result)){
+                           $id=$row['id'];
+                           $name=$row['name'];
+                           $payment_schedule=$row['payment_schedule'];
+                           $bill_number=$row['bill_number'];
+                           $amount_paid=$row['amount_paid'];
+                           $balance_amount=$row['balance_amount'];
+                           $date=$row['date'];
+                                                                       
+                              echo '<tr>
                                                   
-                                                    <td>'.$name.'</td>
-                                                    <td>'.$payment_schedule.'</td>                                          
-                                                    <td>'.$bill_number.'</td>                           
-                                                    <td>'.$amount_paid.'</td> 
-                                                    <td>'.$balance_amount.'</td> 
-                                                    <td>'.$date.'</td>   
-                                                    <td><img src="images/ic-eye.svg"></td>                                              
-                                                   
-                                                    </tr>';
+                            <td>'.$name.'</td>
+                            <td>'.$payment_schedule.'</td>                                          
+                            <td>'.$bill_number.'</td>                           
+                            <td>'.$amount_paid.'</td> 
+                            <td>'.$balance_amount.'</td> 
+                            <td>'.$date.'</td>   
+                           <td><img src="images/ic-eye.svg"></td>                                                                                                 
+                       </tr>';
                                            
-                                                  }
-                                                }
-                  
-                                        ?>
+                               }
+                           }                 
+                       ?>
             </table>
         </div>
 

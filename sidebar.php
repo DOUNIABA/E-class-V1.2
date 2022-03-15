@@ -1,4 +1,5 @@
-<h5 class="sidebar px-2 dark-text  border-start border-5 border-info" id="sidebar" style="font-size:90%;">   
+
+<h5 class="sidebar px-2 dark-text  border-start border-5 border-info" id="sidebar" style="font-size:10px;">   
               E-classe
 </h5>
 
@@ -6,15 +7,14 @@
     <img src="images/profile.jpg" alt="profile picture"
         class=" profile w-75 rounded-circle mx-auto d-block my-2 p-1  ">
       <div class="user text-center ">
-        <h6> 
-
+       
+      <div class="uuser-name">
+      <h7>  
         <?php  
-       
-                                    echo $_SESSION["name"];
-                            ?>  </h6>
-
-       
-        <span class=" fs-6 text-info fw-bold" > Admin </span>              
+        echo $_SESSION["name"]; ?>  </h7>
+        </div>
+      
+        <span class=" fs-6 text-info " > Admin </span>              
     </div>
      <ul class=" p-0 d-flex flex-column align-items-center mt-5 mb-5 mx-auto sidebar-nav w-30 fw-bold justify-content-center align-items-center">
 

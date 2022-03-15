@@ -1,37 +1,41 @@
-<?php include 'server.php' ;
-if (isset($_POST['submit'])){
 
-    if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
-    empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
-	{
-		echo "ERREUR : tous les champs n'ont pas ete renseignés.";
-	}
+   <?php include 'server.php' ;
+    include 'session.php';
+    if (isset($_POST['submit'])){
 
-    $img=$_POST['image'];
-    $nom=$_POST['name'];
-    $email=$_POST['mail'];
-    $phone=$_POST['phone'];
-    $email_number=$_POST['email_number'];
-    $date_admisssion=$_POST['date_admission'];
-    
-    $sql=" INSERT INTO student (img , nom , email , phone , email_number , date_admission) VALUES
-    ('$img' , '$nom', '$email' , '$phone' , '$email_number' , '$date_admission')";
-    $result=mysqli_query($conn,$sql);
+        if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
+        empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+        {
 
-    echo($sql);
-    
-    if($result){
-       
-    }
-    else{
-        die(mysqli_error($conn));
-    }
-}
+          header("location:students.php");          
+          echo '<div class="alert alert-danger" role="alert">
+          Veuillez remplir tous les!
+        </div>';
 
-$conn->close();         
+        }
+        else{
 
-  ?>
+        $img=$_POST['image'];
+        $nom=$_POST['name'];
+        $email=$_POST['mail'];
+        $phone=$_POST['phone'];
+        $email_number=$_POST['email_number'];
+        $date_admisssion=$_POST['date_admission'];
+        
+        $sql=" INSERT INTO studentes (img , nom , email , phone , email_number , date_admission) VALUES 
+        ('$img' , '$nom', '$email' , '$phone' , '$email_number' , '$date_admisssion')";
+        $result=mysqli_query($conn,$sql);
 
+        if($result){
+            header("location:students.php");
+        
+        }
+    } 
+            die(mysqli_error($conn));
+        }
+    $conn->close();         
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,45 +66,6 @@ $conn->close();
       
       <section class="col-sm-3 col-lg-6 col-md-4 rounded " style="margin-left:15%;" >
 
-    
-    <form method="Post" action="">
-
-        <div class="container" justify-content-center>
-            <label for="formFile" class="form-label">image</label>
-            <input class="form-control" type="file" placeholder="" name="image">
-        </div>
-
-        <div class="container">
-            <label for="exampleInputPassword1" class="form-label">name</label>
-            <input class="form-control" type="text" placeholder="enter your name" name="name">
-        </div>
-
-        <div class="container">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input class="form-control" type="email" placeholder="enter your email" name="mail">
-        </div>
-
-        <div class="container" >
-            <label for="exampleInputPassword1" class="form-label">phone</label>
-            <input class="form-control" type="tel" placeholder="enter your phone" name="phone" style="witdh: 30px;">
-        </div>
-
-        
-        <div class="container">
-            <label for="exampleInputPassword1" class="form-label">email_number</label>
-            <input class="form-control" type="tel" placeholder="" name="email_number">
-        </div>
-
-        
-        <div class="container">
-            <label for="exampleInputPassword1" class="form-label">date_admission</label>
-            <input class="form-control" type="date" placeholder="enter your date" name="date_admission">
-        </div>
-        <div class="container mt-5 text-align-center">
-        <input type="hidden" value='test' name='submit' >  
-        <button type="submit" class="btn btn-info">Submit</button>
-         </div>
-    </form>
     </section>
 
               </div>

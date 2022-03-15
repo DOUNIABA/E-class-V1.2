@@ -49,7 +49,7 @@ include ('server.php');
 
                                
                             </div>
-                        <?php  $sql =mysqli_query($conn," SELECT id FROM student order by id") ;
+                        <?php  $sql =mysqli_query($conn," SELECT id FROM studentes order by id") ;
                                  $row= mysqli_num_rows($sql);
 
                                 echo '<h3 class="fs-5 mt-5 ">'.$row.'</h3>'
@@ -67,7 +67,7 @@ include ('server.php');
                                 <p class="fs-5 mb-5 Secondary-text">Course</p>
                             </div>
 
-                            <?php  $sql =mysqli_query($conn," SELECT id FROM course order by id") ;
+                            <?php  $sql =mysqli_query($conn," SELECT id FROM courses order by id") ;
                                  $row= mysqli_num_rows($sql);
 
                                 echo '<h3 class="fs-5 mt-5 ">'.$row.'</h3>'
@@ -81,11 +81,11 @@ include ('server.php');
                                 <img src="images/ic-big-payments.svg" alt="" class="card-image" style="width: 50PX;">                               
                                 <p class="fs-5 mb-5 Secondary-text">Payments</p>
                             </div>
-                            <?php  $sql =mysqli_query($conn," SELECT SUM(balance_amount) as sum FROM payements  ") ;
-                               while( $row= mysqli_fetch_assoc($sql)) {
+                            <?php  $sql =" SELECT SUM(balance_amount) as sum FROM payement" ;
+                                  $res=mysqli_query($conn,$sql);
+                               $row= mysqli_fetch_assoc($res) ;
                                 echo '<h3 class="fs-5 mt-5 ">'.$row['sum'].'dh </h3>';
-                               }
-
+                               
                             ?>
                         </div>
                     </div>
@@ -96,7 +96,11 @@ include ('server.php');
                                 <img src="images/ic-big-users.svg" alt="" class="card-image" style="width: 50PX;">                              
                                 <p class="fs-5 mb-5 text-white">Users</p>
                             </div>
-                            <h3 class="fs-2 mt-5">3</h3>
+                            <?php  $sql =mysqli_query($conn," SELECT id FROM comptes order by id") ;
+                                 $row= mysqli_num_rows($sql);
+
+                                echo '<h3 class="fs-5 mt-5 ">'.$row.'</h3>'
+                            ?>
                         </div>
                     </div>
                 </div>

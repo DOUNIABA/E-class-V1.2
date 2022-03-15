@@ -1,13 +1,26 @@
 
 <?php include 'server.php' ;
 
+include 'session.php';
+
 if (isset($_POST['submit'])){
+
+    if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
+    empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+    {
+
+      echo '<div class="alert alert-danger" role="alert">
+      Veuillez remplir tous les champs!
+      </div>';
+
+    }
+
     $matiere=$_POST['mat'];
     $duree=$_POST['dur'];
     $prof=$_POST['profs'];
     $prix=$_POST['price'];
     
-    $sql=" INSERT INTO course( `matiere`, `duree`, `prof`, `prix`) 
+    $sql=" INSERT INTO courses( `matiere`, `duree`, `prof`, `prix`) 
     VALUES ('$matiere','$duree','$prof','$prix')";
     
     $result=mysqli_query($conn,$sql);  

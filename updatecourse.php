@@ -1,9 +1,11 @@
 
     <?php include 'server.php' ;
 
+    include 'session.php';
+
     $id=$_GET['updateid'];
 
-    $sql="select * from course where id=$id";
+    $sql="select * from courses where id=$id";
     $result=mysqli_query($conn,$sql);
     $row=mysqli_fetch_assoc($result);
     $iddata=$row['id'];

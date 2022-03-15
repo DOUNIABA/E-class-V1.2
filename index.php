@@ -1,10 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,52 +18,59 @@
                     <div class="signin">
                         <h2>SIGN IN</h2>
                         <p>Enter your credentials to access your account</p>
-
                 
                     </div>
-
-                            <?php 
-
-                        
-
-                            if(!empty($_POST['remember'])){
-
-                              setcookie('email',$_POST['mail'],time()+86400);
-                              setcookie('password',$_POST['password'],time()+86400);
-                            
+                          <?php         
 
                                 SESSION_START();
                                 include 'server.php' ;
                                 if(isset($_POST['login']))
                                  {
-
-                                  $_SESSION['time']=time();
-
-                                  if(!empty($_POST['mail']) && !empty($_POST['password'])){
+                                                                                                                             
+                                 $_SESSION['time']=time(); 
+                                  if(isset($_POST['mail']) && isset($_POST['password'])){
                                                                       
                                     $email=$_POST['mail'];
-                                    $password=$_POST['password'];}
+                                    $password=md5($_POST['password']);
 
-                                    $query="SELECT * FROM loginform where email='$email' and password='$password'";
+                                    $query="SELECT * FROM comptes where email='$email'  and password='$password'";
                                     $result=mysqli_query($conn,$query);
-
-                                    if(mysqli_num_rows($result)==true){
+                                    if(mysqli_num_rows($result) != 0){
 
                                     $rows=mysqli_fetch_assoc($result);
-                                     $_SESSION["name"]=$rows['nom'] ;
+
+
+
+                                    $_SESSION["name"]=$rows['name'] ;
 
                                     $_SESSION['email']=$email;
                                     header("location:dashboard.php");
-                                  }
+                                    } else{
+                                    
+                                    echo '<div class="alert alert-danger" role="alert">
+                                    Veuillez entrer un email ou mot de passe valide!
+                                    </div>';
+                                    }                                   
                                 }
-                                  else{
-                                    header("location:index.php?empty=please enter correct email and password");
-                                  }
-                                  }
-                     
-                            ?>
-                               
+                                if(isset($_POST['remember'])){
+                                  setcookie('email',$_POST['mail'],time()+30); 
+                                  setcookie('password',$_POST['password'],time()+30);   
+                              }  
+                              else{
+                                if(isset($_COOKIE['email'])){
+                                  setcookie('email',""); 
+                                }
+                                if(isset($_COOKIE['password'])){
+                                  setcookie('password',""); 
+                                }
+                                
+                              } 
+                            }    
+                                                                                                   
+                          ?>
+                              
                     <div class="mb-3">
+                      
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="enter your email" name="mail" 
                       value="<?php if(isset($_COOKIE["email"])) { echo $_COOKIE["email"]; } ?>" required>
@@ -75,7 +78,7 @@
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label"> Password </label>
                       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password" name="password"                                
-                       value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" required>
+                       value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" >
                     </div>
 
                     <div class="mb-3">
@@ -85,12 +88,13 @@
                       <label for="rememberme" class="form-label"> Rememeber me </label>
                       
                      </div>
-                   
-                    
+                                        
                     <button  class="btn btn-primary" name="login">
                     SIGN IN
                   </button>
                     <div class="contact ">Forgot your password?<a href="#"> Resert Password </a>
+                    </div>
+                    <div class="contact ">Don't have an account?<a href="register.php"> Create your acount </a>
                     </div>
                    
                   </form>
@@ -102,7 +106,5 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
  
- 
   </body>
-
 </html>

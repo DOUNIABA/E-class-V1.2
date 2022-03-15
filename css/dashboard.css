@@ -1,11 +1,11 @@
 body{
   margin: 5px;
-  height: 100vh;  
+  height: 10vh;  
   background:#E5E5E5; 
 }
 .bg{
 background: #FAFFC1;
-height: 100VH;
+height: 100vh;
 }
 
 .list-group a:hover{
@@ -52,11 +52,12 @@ height: 100VH;
   color: #00C1FE;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 400px){
  
   .sorting{
     position:absolute;
       margin-right:70%;
     }
     
-  }
+    }
+  

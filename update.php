@@ -1,12 +1,16 @@
+    
+    
     <?php include 'server.php' ;
+    include 'session.php';
 
     $id=$_GET['updateid'];
 
-    $sql="select * from student where id=$id";
+    $sql="select * from studentes where id=$id";
 
     $result= mysqli_query($conn,$sql);
     
     $row=mysqli_fetch_assoc($result);
+
     $iddata=$row['id'];
     $img=$row['img'];
     $nom=$row['nom'];
@@ -23,14 +27,13 @@
         $email1_number=$_POST['email_number'];
         $date_admission1=$_POST['date_admission'];
 
-        $sql1 = "   UPDATE `students` SET 
+        $sql1 = "   UPDATE `studentes` SET 
         `img`='$img1',`nom`='$nom1',`email`='$email1',
         `phone`='$phone1',`email_number`='$email1_number',`date_admission`='$date_admission1' WHERE id=$iddata";
 
         $result=mysqli_query($conn,$sql1);
         
         if($result){
-            echo"data updated successfully";
             header('location:students.php');
         }
         else{
@@ -39,7 +42,7 @@
     }
     $conn->close();         
 
-    ?>
+     ?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -68,10 +71,9 @@
                    ?>        <form method="Post" action="update.php?updateid=<?php echo $id ?>">
             <div class="mb-3">
                 <label for="formFile" class="form-label" > image <br> <?php echo $img;
-                ?></label>
-               
+                ?></label>               
                 <input class="form-control" type="file" placeholder="" name="image" value=<?php
-                echo $nom;?>>
+                echo $img;?>>
             </div>
 
             <div class="mb-3">
