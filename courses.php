@@ -22,6 +22,44 @@ include 'session.php';
  
  <body >   
 
+ <?php  
+
+if (isset($_POST['submit'])){
+
+    if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
+    empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+    {
+
+      echo '<div class="alert alert-danger" role="alert">
+      Veuillez remplir tous les champs!
+      </div>';
+
+    }
+
+    $matiere=$_POST['mat'];
+    $duree=$_POST['dur'];
+    $prof=$_POST['profs'];
+    $prix=$_POST['price'];
+    
+    $sql=" INSERT INTO courses( `matiere`, `duree`, `prof`, `prix`) 
+    VALUES ('$matiere','$duree','$prof','$prix')";
+    
+    $result=mysqli_query($conn,$sql);  
+
+if($result){
+
+        header('location:courses.php');
+        
+            }
+    else{
+        die(mysqli_error($conn));
+    }
+}
+
+      
+
+?>
+
  <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -55,7 +93,7 @@ include 'session.php';
         <input type="hidden" value='test' name='submit' > 
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
  
-        <button type="submit" class="btn btn-info">ADD</button>
+        <button type="submit" class="btn btn-info" name="submit">ADD</button>
          </div>
         
      </form>
@@ -87,7 +125,7 @@ include 'session.php';
                             <img src="images/ic-sort.svg" alt="sort">
                               <button class="sort ic-sort btn btn-sort"></button>
 
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         ADD NEW COURSE</button>                          </div>
 
                       </div>

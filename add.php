@@ -1,41 +1,5 @@
 
-   <?php include 'server.php' ;
-    include 'session.php';
-    if (isset($_POST['submit'])){
-
-        if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
-        empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
-        {
-
-          header("location:students.php");          
-          echo '<div class="alert alert-danger" role="alert">
-          Veuillez remplir tous les!
-        </div>';
-
-        }
-        else{
-
-        $img=$_POST['image'];
-        $nom=$_POST['name'];
-        $email=$_POST['mail'];
-        $phone=$_POST['phone'];
-        $email_number=$_POST['email_number'];
-        $date_admisssion=$_POST['date_admission'];
-        
-        $sql=" INSERT INTO studentes (img , nom , email , phone , email_number , date_admission) VALUES 
-        ('$img' , '$nom', '$email' , '$phone' , '$email_number' , '$date_admisssion')";
-        $result=mysqli_query($conn,$sql);
-
-        if($result){
-            header("location:students.php");
-        
-        }
-    } 
-            die(mysqli_error($conn));
-        }
-    $conn->close();         
-
-    ?>
+   
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,16 +21,6 @@
 
 
 
-    <div class="container-fluid">
-         <div  class="row">
-              <div class="bg col-2 p-0" id="sidebardash">  
-                <?php include("sidebar.php");  ?>
-               </div>
-            
-                 <div class=" px-1 col-10">
-                   <?php
-                    include ("header.php");
-                   ?>
       
       <section class="col-sm-3 col-lg-6 col-md-4 rounded " style="margin-left:15%;" >
 

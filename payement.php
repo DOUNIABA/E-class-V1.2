@@ -20,6 +20,41 @@ include 'session.php';
 </head>
 <body>
 
+<?php
+    
+    if (isset($_POST['submit'])){
+
+    $name=$_POST['nom'];
+    $payment_schedule=$_POST['ordre'];
+    $bill_number=$_POST['num'];
+    $amount_paid=$_POST['amount'];
+    $balance_amount=$_POST['b_amount'];
+    $date=$_POST['date'];
+
+    $sql=" insert into payement (name , payment_schedule , bill_number , amount_paid , balance_amount , date) VALUES
+    ('$name' , '$payment_schedule', '$bill_number' , '$amount_paid' , '$balance_amount' , '$date')";
+    $result=mysqli_query($conn,$sql);
+    
+    if($result){
+      header("location:payement.php");
+        }
+    else{
+        die(mysqli_error($conn));
+    }
+
+    if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
+    empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+    {
+
+      echo '<div class="alert alert-danger" role="alert">
+      Veuillez remplir tous les champs!
+      </div>';}
+}
+
+       
+
+  ?>
+
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -119,12 +154,9 @@ include 'session.php';
                         <th class="th-sm">Balance amount</th>
                         <th class="th-sm">Date </th>
                         <th class="th-sm"> </th>
-
-
                 </tr>
                 </thead>
-
-                      <?php  
+                    <?php  
                             $sql="select * from payement";
                             $result=mysqli_query($conn,$sql);
                                                

@@ -3,6 +3,7 @@
         include 'server.php' ;
 
         if(isset($_POST['login'])){
+            echo "trying to save user";
             $username=$_POST['username'];
             $email=$_POST['mail'];
             $password= md5($_POST['password']);
@@ -11,33 +12,32 @@
             if ($password==$cpassword) {
                 $sql="SELECT * FROM comptes WHERE email='$email'";
                 $result=mysqli_query($conn,$sql);  
-                if(!$result->num_rows>0){
+                if(mysqli_num_rows($result)==0){
 
-            $sql = " INSERT INTO comptes (name, email , password,cpassword) VALUES 
-             (' $username' , '$email', '$password' , '$cpassword')";
-             $result=mysqli_query($conn,$sql);     
-             
-            if ($result) {
+                            $sql = " INSERT INTO comptes (name, email , password,cpassword) VALUES 
+                            ('$username' , '$email', '$password' , '$cpassword')";
+                            $result=mysqli_query($conn,$sql);     
+                            echo 'query is: '.$sql;
+                            if ($result) {
+                                var_dump($result);
+                                echo "<script>alert('registration completed')</script>";
+                                $username="";
+                                $email="";
+                                $_POST['password']="";
+                                $_POST['cpassword']="";
+                                // header("location:index.php");
+                                
+                            }
+                            else {
+                                echo "<script>alert('something wrong')</script>";
 
-              echo "<script>alert('registration completed')</script>";
-              $username="";
-              $email="";
-              $_POST['password']="";
-              $_POST['cpassword']="";
-              header("location:index.php");
-
-            }
-            else {
-                echo "<script>alert('something wrong')</script>";
-
-            }
+                            }
                 }else{
                     echo '<div class="alert alert-danger" role="alert">
                    Email already exists!
                     </div>';
                 }
-        } 
-        else {
+        }else {
             echo "<script>alert('Password Not matched')</script>";
                       }}
         
@@ -58,7 +58,7 @@
      <section class="container-fluid ">
          <section class="row justify-content-center">
              <section class="col-sm-12 col-lg-4 col-md-6">
-             <form  class="form-container" action="index.php" method="POST" onsubmit="return validation()">
+             <form  class="form-container"  method="POST" onsubmit="">
                     <h1 class=" font-weight-bold">E-Classe</h1>
                     <div class="signin">
                         <h2>Register</h2>
