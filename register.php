@@ -58,7 +58,7 @@
      <section class="container-fluid ">
          <section class="row justify-content-center">
              <section class="col-sm-12 col-lg-4 col-md-6">
-                <form class="form-container" action="" method="POST">
+             <form  class="form-container" action="index.php" method="POST" onsubmit="return validation()">
                     <h1 class=" font-weight-bold">E-Classe</h1>
                     <div class="signin">
                         <h2>Register</h2>
@@ -66,27 +66,28 @@
                     </div>
                     <div class="mb-3">
                       
-                      <label for="exampleInputEmail1" class="form-label">UserName</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="enter your username" name="username" 
-                      value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>" required>
+                      <label for="exampleInputEmail1" class="form-label">Full Name</label><br>
+                      <span id="nomid" class="text-danger"></span>
+                      <input type="text" class="form-control" id="nom"  placeholder="enter your username" name="username">
                     </div>
                               
                     <div class="mb-3">                      
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="enter your email" name="mail" 
-                      value="<?php if(isset($_COOKIE["email"])) { echo $_COOKIE["email"]; } ?>" required>
+                      <label for="exampleInputEmail1" class="form-label">Email address</label><br>
+                      <span id="emailid" class="text-danger"></span>
+                      <input type="email" class="form-control" id="mail"  placeholder="enter your email" name="mail">
                     </div>
 
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"> Password </label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password" name="password"                                
-                       value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" >
-                    </div>
+                    <div class="mb-3">                     
+                   <label for="exampleInputPassword1" class="form-label"> Password </label><br>                     
+                   <span id="passwordid" class="text-danger"></span>
+                   <input type="password" class="form-control" id="password" placeholder="enter your password" name="password">
+
+                </div>
 
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"> Confirm Password </label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter your password" name="Cpassword"                                
-                       value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>" >
+                      <label for="exampleInputPassword1" class="form-label"> Confirm Password </label><br>
+                      <span id="cofirmid" class="text-danger"></span>
+                      <input type="password" class="form-control" id="confirmpass" placeholder="enter your password" name="Cpassword">
                     </div>
 
                                         
@@ -104,6 +105,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
- 
+    <script src="validation.js"> </script>
   </body>
 </html>

@@ -38,9 +38,6 @@
                                     if(mysqli_num_rows($result) != 0){
 
                                     $rows=mysqli_fetch_assoc($result);
-
-
-
                                     $_SESSION["name"]=$rows['name'] ;
 
                                     $_SESSION['email']=$email;
@@ -84,9 +81,7 @@
                     <div class="mb-3">
                       <input type="checkbox" name="remember" 
                       <?php if(isset($_COOKIE["email"])) { ?> checked <?php } ?> >
-
-                      <label for="rememberme" class="form-label"> Rememeber me </label>
-                      
+                      <label for="rememberme" class="form-label"> Rememeber me </label>                      
                      </div>
                                         
                     <button  class="btn btn-primary" name="login">
