@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +18,9 @@
                     <h1 class=" font-weight-bold">E-Classe</h1>
                     <div class="signin">
                         <h2>SIGN IN</h2>
-                        <p>Enter your credentials to access your account</p>
-                
+                        <p>Enter your credentials to access your account</p>                
                     </div>
                           <?php         
-
                                 SESSION_START();
                                 include 'server.php' ;
                                 if(isset($_POST['login']))
@@ -38,11 +37,7 @@
                                     if(mysqli_num_rows($result) != 0){
 
                                     $rows=mysqli_fetch_assoc($result);
-
-
-
                                     $_SESSION["name"]=$rows['name'] ;
-
                                     $_SESSION['email']=$email;
                                     header("location:dashboard.php");
                                     } else{
@@ -101,9 +96,9 @@
              </section>
          </section>
      </section>
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
  
   </body>

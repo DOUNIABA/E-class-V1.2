@@ -26,6 +26,7 @@
  }
  .list-group a:hover{
      background: #00C1FE !important;
+     width: 20%;
  }  
   #sidebar-wrapper .list-group {
     width: 240px;
@@ -54,7 +55,6 @@
  .card_student i{
   color: #74C1ED ;
 
-  #EE95C5
  }
 .card_cours{
  background: #FEF6FB;

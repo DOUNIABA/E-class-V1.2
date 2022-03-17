@@ -16,6 +16,8 @@ include 'session.php';
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    <link rel="stylesheet" href="css/dashboard.css">
    <link rel="stylesheet" href="side.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
  
    <title>course</title>
  </head>
@@ -26,8 +28,8 @@ include 'session.php';
 
 if (isset($_POST['submit'])){
 
-    if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
-    empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+    if (empty($_POST['mat']) || empty($_POST['dur']) || empty($_POST['profs']) || 
+    empty($_POST['price']))
     {
 
       echo '<div class="alert alert-danger" role="alert">
@@ -55,8 +57,6 @@ if($result){
         die(mysqli_error($conn));
     }
 }
-
-      
 
 ?>
 
@@ -90,9 +90,7 @@ if($result){
         </div>
 
         <div class="container mt-5 text-align-center">
-        <input type="hidden" value='test' name='submit' > 
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
- 
         <button type="submit" class="btn btn-info" name="submit">ADD</button>
          </div>
         
@@ -125,7 +123,7 @@ if($result){
                             <img src="images/ic-sort.svg" alt="sort">
                               <button class="sort ic-sort btn btn-sort"></button>
 
-                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
                                         ADD NEW COURSE</button>                          </div>
 
                       </div>
@@ -133,7 +131,7 @@ if($result){
                        <div class="row my-0">
                            <div class=" table-responsive-sm table-responsive-md justify-content-end" style="margin-left:10px;">
                    
-                                     <table class="table bg-white table table-striped table-hover">
+                                     <table class="table bg-white table table-striped table-hover" >
                                          <thead>
                                              <tr class="bg_table text-table ">
                                                                                                  
@@ -166,8 +164,12 @@ if($result){
                                                     
                                                      <td>
                                                      <button class="btn btn-light"><a href="updatecourse.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
-                                                     <button class="btn btn-light"><a href="deletecourse.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
-                                                     </td>
+                                                    
+                                                     <button class="btn btn-light" onclick="con()"><a href="deletecourse.php?deleteid='.$id.'"><img src="images/ic-delete.svg"  ></a></button>
+                                                    <script>
+                                                    $(function(){
+                                                      toastr.success("Success Message")});
+                                                     </td> 
                                                      </tr>';
                                             
                                                    }
@@ -197,6 +199,18 @@ if($result){
       toggleButton.onclick = function () {
           el.classList.toggle("toggled");
       };
+
+
+      function con(){
+        if(window.confirm("Voulez-vous vraiment supprimer ?"))
+        {
+          return true
+        }else{
+          return false
+        }
+      }
+  </script>
+  </script>
   </script>
    </main>
    

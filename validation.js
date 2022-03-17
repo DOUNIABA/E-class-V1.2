@@ -1,5 +1,5 @@
- function validation(){
-
+ 
+ function validation(){          
     let name=document.getElementById('nom').value;
     let email=document.getElementById('mail').value;
     let password=document.getElementById('password').value;
@@ -46,6 +46,5 @@ else if (password!= confirmpass) {
     document.getElementById('cofirmid').innerHTML =" ** Password Not Matched!!**"
     return false;
   }
-
 
  }

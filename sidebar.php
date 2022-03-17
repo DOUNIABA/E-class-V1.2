@@ -67,7 +67,7 @@
         <li class=" w-100  pl-5">
             <a href="#" class=" text-light pl-4 text-dark">
                 
-            <span class="d-none d-md-inline">  <img src="images/ic-settings.svg" alt="z"class="card-image">Settings</span>
+            <span class="d-none d-md-inline"><img src="images/ic-settings.svg" alt="z"class="card-image">Settings</span>
             </a>
         </li>
         <a href="deconn.php" class=" text-light pl-4 text-dark mt-5 fw-bolder text-decoration-none" style="font-size: 80%;">

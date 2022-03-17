@@ -1,4 +1,3 @@
-
 <?php include 'server.php' ;
  include 'session.php'; 
  ?>
@@ -18,85 +17,37 @@
     <title>student</title>
   </head>
 
-<body>   
+<body >   
 
-<?php 
-   
+<?php
     if (isset($_POST['submit'])){
 
-        if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
-        empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
-        {
+      if (empty($_POST['image']) || empty($_POST['name']) || empty($_POST['mail']) || 
+      empty($_POST['phone']) || empty($_POST['email_number']) || empty($_POST['date_admission']))
+      {
+        echo '<div class="alert alert-danger" role="alert">
+        Veuillez remplir tous les!
+      </div>';
+      $img=$_POST['image'];
+      $nom=$_POST['name'];
+      $email=$_POST['mail'];
+      $phone=$_POST['phone'];
+      $email_number=$_POST['email_number'];
+      $date_admisssion=$_POST['date_admission'];
 
-          header("location:students.php");          
-          echo '<div class="alert alert-danger" role="alert">
-          Veuillez remplir tous les!
-        </div>';
+      $sql=" INSERT INTO studentes (img , nom , email , phone , email_number , date_admission) VALUES 
+      ('$img' , '$nom', '$email' , '$phone' , '$email_number' , '$date_admisssion')";
+      $result=mysqli_query($conn,$sql);
 
-        }
-        else{
+      if($result){
+          header("location:students.php");
 
-        $img=$_POST['image'];
-        $nom=$_POST['name'];
-        $email=$_POST['mail'];
-        $phone=$_POST['phone'];
-        $email_number=$_POST['email_number'];
-        $date_admisssion=$_POST['date_admission'];
-        
-        $sql=" INSERT INTO studentes (img , nom , email , phone , email_number , date_admission) VALUES 
-        ('$img' , '$nom', '$email' , '$phone' , '$email_number' , '$date_admisssion')";
-        $result=mysqli_query($conn,$sql);
-
-        header("location:students.php");
-        
-        }
+      }
+  } 
+          die(mysqli_error($conn));
       }
 
-    ?>
-
-
-
-<?php 
-
-    $id=$_POST['updateid'];
-
-    $students="select * from studentes where id=$id";
-
-    $resul= mysqli_query($conn,$students);
-    
-    $row=mysqli_fetch_assoc($resul);
-
-    $iddata=$row['id'];
-    $img=$row['img'];
-    $nom=$row['nom'];
-    $email=$row['email'];
-    $phone=$row['phone'];
-    $email_number=$row['email_number'];
-    $date_admission=$row['date_admission'];
-
-    if (isset($_POST['submit'])){
-        $img1=$_POST['image'];
-        $nom1=$_POST['name'];
-        $email1=$_POST['mail'];
-        $phone1=$_POST['phone'];
-        $email1_number=$_POST['email_number'];
-        $date_admission1=$_POST['date_admission'];
-
-        $sql1 = "   UPDATE `studentes` SET 
-        `img`='$img1',`nom`='$nom1',`email`='$email1',
-        `phone`='$phone1',`email_number`='$email1_number',`date_admission`='$date_admission1' WHERE id=$iddata";
-
-        $result=mysqli_query($conn,$sql1);
-        
-        if($result){
-            header('location:students.php');
-        }
-        else{
-        die(mysqli_error($conn));
-        }
-    }
-
-     ?>
+  ?>
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -112,8 +63,7 @@
 
         <div class="container" justify-content-center>
             <label for="formFile" class="form-label">image</label>
-            <input class="form-control" type="file" placeholder="" name="image"value=<?php
-                echo $img;?>>
+            <input class="form-control" type="file" placeholder="" name="image">
         </div>
 
         <div class="container">
@@ -143,10 +93,11 @@
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" name="updateid">save</button>
+        <button type="submit" class="btn btn-primary" name="submit">ADD</button>
       </div>
     </form>
-    </div>
+
+      </div>
      
     </div>
   </div>
@@ -156,7 +107,6 @@
   <div class="container-fluid">
          <div  class="row">
               <div class="bg col-2 p-0" id="sidebardash">  
-             
                 <?php include("sidebar.php");  ?>
                </div>
               
@@ -196,11 +146,11 @@
                                         </thead>
                                             <?php  
 
-                                                $student="select * from studentes";
-                                                    $res=mysqli_query($conn,$student);
-                                                    if($res){
+                                                $sql="select * from studentes";
+                                                    $result=mysqli_query($conn,$sql);
+                                                    if($result){
 
-                                                    while($row=mysqli_fetch_assoc($res)){
+                                                    while($row=mysqli_fetch_assoc($result)){
                                                       $id=$row['id'];
                                                       $img=$row['img'];
                                                       $nom=$row['nom'];
@@ -210,7 +160,6 @@
                                                       $date_admission=$row['date_admission'];
 
                                                      echo '<tr>         
-
                                                       <td><img src= "images/'.$img.'" style="width: 10vh;"></td>
                                                       <td>'.$nom.'</td>
                                                       <td>'.$email.'</td>
@@ -219,9 +168,11 @@
                                                       <td>'.$date_admission.'</td>
                                                       <td>
                                                       <button class="btn btn-light"><a href="update.php?updateid='.$id.'"><img src="images/ic-edit.svg"></a></button>
-                                                      <button class="btn btn-light"><a href="deletestudent.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
+                                                      <button class="btn btn-light" onclick="con()"><a href="deletestudent.php?deleteid='.$id.'"><img src="images/ic-delete.svg"></a></button>
                                                       </td>
                                                       </tr>';
+
+                                                      
                                            
                                                   }
                                                 }
@@ -249,6 +200,16 @@
       toggleButton.onclick = function () {
           el.classList.toggle("toggled");
       };
+
+      
+      function con(){
+        if(window.confirm("Voulez-vous vraiment supprimer ?"))
+        {
+          return true
+        }else{
+          return false
+        }
+      }
   </script>
   </main>
   

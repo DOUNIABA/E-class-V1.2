@@ -8,7 +8,6 @@
     $sql="select * from studentes where id=$id";
 
     $result= mysqli_query($conn,$sql);
-    
     $row=mysqli_fetch_assoc($result);
 
     $iddata=$row['id'];
